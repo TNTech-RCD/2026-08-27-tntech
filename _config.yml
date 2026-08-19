@@ -54,7 +54,16 @@ pilot: false
 # Most workshops don't use extra pages. More information about extra
 # pages are included in the README:
 # https://github.com/carpentries/workshop-template#creating-extra-pages
-title: "Workshop Title"
+title: "Fall 2026 Computing Foundations Workshop Series" 
+subtitle: "Presented by: Research Computing & Data, a Division of ITS"
+
+workshop_brand:
+  organization: "Tennessee Tech University"
+  unit: "Research Computing & Data"
+  primary: #753BBD;
+  accent: #ffd100;
+  dark: #444444;
+  light: #ffffff;
 
 #------------------------------------------------------------
 # Incubator workshop settings (only relevant for workshops teaching a lesson

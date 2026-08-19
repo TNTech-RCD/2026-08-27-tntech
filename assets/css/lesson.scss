@@ -470,3 +470,225 @@ summary {
     margin-bottom: 20px;
     font-size: medium;
 }
+
+//------------------------------------------
+// Reusable workshop series components
+//------------------------------------------
+
+$workshop-primary: {{ site.workshop_brand.primary | default: "#753BBD"}};
+$workshop-accent: {{ site.workshop_brand.accent | default: "#FFD100"}};
+$workshop-dark: {{ site.workshop_brand.dark | default: "#444444"}};
+$workshop-light: {{ site.workshop_brand.light | default: "#FFFFFF"}};
+
+//------------------------------------------
+// Flyer hero
+//------------------------------------------
+.workshop-flyer {
+  margin: 2rem auto;
+  max-width: 1100px;
+
+  .workshop-flyer-layout {
+    display: grid;
+    column-gap: 2.5rem;
+    row-gap: 1.5rem;
+    grid-template-columns: minmax(0, 1.65fr) minmax(240PX, 0.65fr);
+  }
+
+  .workshop-flyer-main {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .workshop-hero {
+    background: $workshop-primary;
+    border-bottom: 10px solid $workshop-accent;
+    color: $workshop-light;
+    padding: 4rem 7%;
+  }
+
+  .workshop-kicker {
+    color: $workshop-accent;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    margin: 0 0 1.75rem;
+  }
+
+  .workshop-hero h1 {
+    color: $workshop-light;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(3rem, 5vw, 4rem);
+    font-weight: 400;
+    letter-spacing: -0.045em;
+    line-height: 0.98;
+    margin: 0 0 2rem;
+    max-width: none;
+  }
+
+  .workshop-hero h1 strong {
+    color: $workshop-accent;
+    font-weight: 400;
+  }
+
+  .workshop-introduction {
+    color: rgba($workshop-light, 0.92);
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 700px;
+  }
+
+  .workshop-quick-facts {
+    align-items: start;
+    border-top: 1px solid rgba($workshop-light, 0.25);
+    display: grid;
+    gap: 1.75rem;
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin-top: 0;
+    padding-top: 1.5rem;
+  }
+
+  .workshop-quick-facts strong {
+    color: $workshop-light;
+  }
+
+    .workshop-fact {
+    min-width: 0;
+  }
+
+  .workshop-fact-label {
+    // color: rgba($workshop-light, 0.7);
+    color: $workshop-accent;
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.55rem;
+  }
+
+  .workshop-fact strong {
+    color: $workshop-light;
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.35;
+    margin-bottom: 0.25rem;
+  }
+
+  .workshop-fact > span:not(.workshop-fact-label) {
+    color: rgba($workshop-light, 0.82);
+    display: block;
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  //Flyer outcomes and certificate
+  .workshop-outcomes {
+    border-top: 0;
+    margin-top: auto;
+    min-width: 0;
+    padding-top: 2.5rem;
+  }
+
+  .workshop-outcomes h2 {
+    color: $workshop-light;
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0 0 0.75rem;
+  }
+
+  .workshop-outcomes ul {
+    color: rgba($workshop-light, 0.9);
+    display: grid;
+    gap: 0.6rem 2rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 0;
+    padding-left: 0.2rem;
+  }
+
+  .workshop-outcomes li {
+    line-height: 1.45;
+    padding-left: 0.2rem;
+  }
+
+  .workshop-certificate {
+    background: rgba($workshop-light, 0.1);
+    border-left: 4px solid $workshop-accent;
+    padding: 1.25rem;
+  }
+
+  .workshop-certificate-label {
+    color: $workshop-accent;
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12rem;
+    margin-bottom: 0.65rem;
+    text-transformation: uppercase;
+  }
+
+    .workshop-certificate h2 {
+    color: $workshop-light;
+    font-size: 1.15rem;
+    line-height: 1.3;
+    margin: 0 0 0.65rem;
+  }
+
+  .workshop-certificate p {
+    color: rgba($workshop-light, 0.86);
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  // Flyer QR Code
+
+  .workshop-flyer-sidebar {
+    align-self: start;
+    display: grid;
+    gap: 1rem;
+    grid-template-rows: auto auto;
+  }
+
+  .workshop-qr {
+    align-items: center;
+    background: $workshop-light;
+    color: $workshop-dark;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 1.1rem;
+    text-align: center;
+  }
+
+  .workshop-qr img {
+    display: block;
+    height: auto;
+    margin: 0 auto 0.8rem;
+    max-width: 170px;
+    width: 100%;
+  }
+
+  .workshop-qr a:link,
+  .workshop-qr a:visited {
+    color: $workshop-dark;
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+  }
+
+  .workshop-qr span {
+    color: $workshop-dark;
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-top: 0.45rem;
+    max-width: 190px;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+}
+
