@@ -2,93 +2,124 @@
 
 <main class="workshop-flyer">
     <section class="workshop-hero">
-        <p class="workshop-kicker">{{ site.title | upcase }}</p>
 
-        <h1>
-            Build practical <br>
-            <strong>research computing</strong>
-            skills.
-        </h1>
+        <div class="workshop-flyer-layout">
 
-        <p class="workshop-introduction">
-            Free beginner-friendly, hands-on workshops for Tennessee Tech students, faculty, staff, and researchers.
-        </p>
+            <div class="worhop-flyer-main">
+                <p class="workshop-kicker">{{ site.title | upcase }} <br>
+                    {{ site.subtitle | upcase }}</p>
 
-        <div class="workshop-quick-facts">
+                <h1>
+                    Build practical <br>
+                    <strong>computing foundations.</strong>
+                </h1>
 
-            <div class="workshop-fact">
-                <span class="workshop-fact-label">
-                    DATES
-                </span>
-                <strong>
-                    {{ workshop.humandate }}
-                </strong>
-                <span>
-                    {{ workshop.humantime }}
-                </span>
-            </div>
-            <div class="workshop-fact">
-                <span class="workshop-fact-label">
-                    LOCATION
-                </span>
-                <strong>
-                    {{ workshop.building }}
-                </strong>
-                <span>
-                    {{ workshop.streetaddress }}
-                </span>
-                <span>
-                    {{ workshop.citystatezip }}
-                </span>
-            </div>
-            <div class="workshop-fact">
-                <span class="workshop-fact-label">
-                    EXPERIENCE
-                </span>
-                <strong>
-                    None required
-                </strong>
-                <span>
-                    Start where you are.
-                </span>
-            </div>
-            <div class="workshop-fact">
-                <span class="workshop-fact-label">
-                    FORMAT
-                </span>
-                <strong>
-                    In person
-                </strong>
-                <span>
-                    Bring your laptop
-                </span>
-            </div>
-        </div>
-        <div class="workshop-flyer-lower">
-            {% if workshop.workshop_outcomes %}
-            <div class="workshop-outcomes">
-                <h2>Leave ready to:</h2>
-                <ul>
-                    {% for outcome in workshop.workshop_outcomes %}
-                    <li>{{ outcome }}</li>
-                    {% endfor %}
-                </ul>
-            </div>
-            {% endif %}
-
-            {% if workshop.certificate.enabled %}
-            <aside class="workshop-certificate">
-                <span class="workshop-certificate-label">
-                    {{ workshop.certificate.invitation }}
-                </span>
-                <h2>
-                    Earn a {{ workshop.certificate.title }}
-                </h2>
-                <p>
-                    {{ workshop.certificate.description }}
+                <p class="workshop-introduction">
+                    {{ workshop.workshop_introduction }}
                 </p>
+
+
+                {% if workshop.workshop_outcomes %}
+                <div class="workshop-outcomes">
+                    <h2>Leave ready to:</h2>
+                    <ul>
+                        {% for outcome in workshop.workshop_outcomes %}
+                        <li>{{ outcome }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+            </div>
+
+
+
+            {% if workshop.certificate.enabled or workshop.workshop_qr_code %}
+            <aside class="workshop-flyer-sidebar">
+
+                {% if workshop.certificate.enabled %}
+                <div class="workshop-certificate">
+
+                    <span class="workshop-certificate-label">
+                        {{ workshop.certificate.invitation }}
+                    </span>
+                    <h2>
+                        Earn a {{ workshop.certificate.title }}
+                    </h2>
+                    <p>
+                        {{ workshop.certificate.description }}
+                    </p>
+                </div>
+                {% endif %}
+
+                {% if workshop.workshop_qr_code %}
+                <div class="workshop-qr">
+                    <img src="{{ workshop.workshop_qr_code | relative_url }}"
+                        alt="QR Code linking to the workshop series page">
+                    
+                        <a href="{{ workshop.workshop_url }}">
+                        Explore sessions and register
+                    </a>
+
+                    <span>
+                        {{ workshop.workshop_display_url | replace: '/', '/<br>' }}
+                    </span>
+
+                </div>
+                {% endif %}
+
             </aside>
             {% endif %}
+            <div class="workshop-quick-facts">
+
+                <div class="workshop-fact">
+                    <span class="workshop-fact-label">
+                        DATES
+                    </span>
+                    <strong>
+                        {{ workshop.humandate }}
+                    </strong>
+                    <span>
+                        {{ workshop.humantime }}
+                    </span>
+                </div>
+                <div class="workshop-fact">
+                    <span class="workshop-fact-label">
+                        LOCATION
+                    </span>
+                    <strong>
+                        {{ workshop.building }}
+                    </strong>
+                    <span>
+                        {{ workshop.streetaddress }}
+                    </span>
+                    <span>
+                        {{ workshop.citystatezip }}
+                    </span>
+                </div>
+                <div class="workshop-fact">
+                    <span class="workshop-fact-label">
+                        EXPERIENCE
+                    </span>
+                    <strong>
+                        None required
+                    </strong>
+                    <span>
+                        Start where you are.
+                    </span>
+                </div>
+                <div class="workshop-fact">
+                    <span class="workshop-fact-label">
+                        FORMAT
+                    </span>
+                    <strong>
+                        In person
+                    </strong>
+                    <span>
+                        Bring your laptop
+                    </span>
+                </div>
+            </div>
         </div>
+
     </section>
 </main>

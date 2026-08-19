@@ -11,7 +11,7 @@ language: "en"     # lowercase two-letter ISO language code such as "fr" (see ht
 latitude: "36.1782"     # decimal latitude of workshop venue - this should be a number greater than or equal to -90, and less than or equal to 90 (use https://www.latlong.net/)
 longitude: "-85.5085"    # decimal longitude of the workshop venue - this should be a number greater than or equal to -180, and less than or equal to 180 (use https://www.latlong.net)
 humandate: "Select Thursdays"    # human-readable dates for the workshop (e.g., "Feb 17-18, 2020")
-humantime: "6:00-9:00 PM Central Time"    # human-readable times for the workshop e.g., "9:00 am - 4:30 pm CEST (7:00 am - 2:30 pm UTC)"
+humantime: "6:00–9:00 PM Central Time"    # human-readable times for the workshop e.g., "9:00 am - 4:30 pm CEST (7:00 am - 2:30 pm UTC)"
 startdate: 2026-08-27      # machine-readable start date for the workshop in YYYY-MM-DD format like 2015-01-01
 enddate: 2026-11-19        # machine-readable end date for the workshop in YYYY-MM-DD format like 2015-01-02
 instructor: ["Sharon Colson"] # boxed, comma-separated list of instructors' names as strings, like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
@@ -24,18 +24,26 @@ eventbrite:           # alphanumeric key for Eventbrite registration, e.g., "123
 what3words:           # what3words (https://what3words.com) address of the workshop venue, without leading slashes e.g. "globe.lessening.computers"
 
 ### Workshop Series Content ###
-workshop_url: "https://recd.tntech.edu/2026-08-27-tntech"
+workshop_url: "https://www.rcd.tntech.edu/2026-08-27-tntech/"
+workshop_display_url: "www.rcd.tntech.edu/2026-08-27-tntech"
+workshop_qr_code: "/assets/img/workshop/workshop-qr-code.png"
+
 workshop_outcomes:
   - "Work confidently at the command line"
   - "Track and share work with Git"
-  - "Analyze research data with Python or R"
-  - "Build more reproducible workflows"
+  - "Analyze data with Python or R"
+  - "Build reproducible workflows"
 
 certificate:
   enabled: true
   title: "Certificate of Achievement"
   invitation: "Complete the pathway"
-  description: "Complete Unix, Git, and one full Python or R lesson - 12 instructional hours - no homework."
+  description: "Complete Unix, Git, and one full Python or R lesson. That's 12 instructional hours with no homework."
+
+workshop_introduction: >-
+  Free beginner-friendly, hands-on workshops for Tennessee Tech students,
+  faculty, staff, and researchers who want to work more confidently with
+  data, code, and computational tools.
 
 # DON'T CHANGE THIS
 layout: workshop
