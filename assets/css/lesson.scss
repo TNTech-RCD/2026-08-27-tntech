@@ -951,5 +951,93 @@ $workshop-light: {{ site.workshop_brand.light | default: "#FFFFFF"}};
     font-weight: 700;
   }
 
+  // General preparation and surveys
+
+  .series-information {
+    background: $workshop-light;
+    padding: 2.75rem 5%;
+  }
+
+  .series-information-heading {
+    margin-bottom: 1.5rem;
+  }
+
+  .series-information-heading span,
+  .series-information-label {
+    color: $workshop-primary;
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+  }
+
+  .series-information-heading h2 {
+    border: 0;
+    color: $workshop-dark;
+    font-size: 1.55rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .series-information-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .series-information-card {
+    border: 1px solid rgba($workshop-dark, 0.18);
+    padding: 1.25rem;
+  }
+
+  .series-information-card h3 {
+    color: $workshop-dark;
+    font-size: 1.15rem;
+    margin: 0 0 0.75rem;
+  }
+
+  .series-information-card p {
+    color: rgba($workshop-dark, 0.85);
+    line-height: 1.6;
+    margin: 0 0 1rem;
+  }
+
+  .series-information-notice {
+    background: rgba($workshop-accent, 0.1);
+    border-left: 4px solid $workshop-accent;
+    color: $workshop-dark;
+    line-height: 1.55;
+    margin: 1rem 0;
+    padding: 0.85rem 1rem;
+  }
+
+  .series-registration-notice {
+    font-weight: 700;
+  }
+
+  .series-survey-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+  }
+
+  .series-survey-actions a:link,
+  .series-survey-actions a:visited {
+    border: 1px solid $workshop-primary;
+    color: $workshop-primary;
+    display: inline-block;
+    font-size: 0.82rem;
+    font-weight: 700;
+    padding: 0.55rem 0.75rem;
+    text-decoration: none;
+  }
+
+  .series-survey-actions a:hover,
+  .series-survey-actions a:focus {
+    text-decoration: underline;
+  }
+
 }
 

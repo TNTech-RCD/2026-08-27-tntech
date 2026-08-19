@@ -99,4 +99,66 @@
     </section>
     {% endif %}
 
+    <section class="series-information">
+
+        <div class="series-information-heading">
+            <span>What to know</span>
+            <h2>Prepare, participate, and follow up.</h2>
+        </div>
+
+        <div class="series-information-grid">
+
+            <article class="series-information-card">
+                <span class="series-information-label">
+                    Preparation
+                </span>
+
+                <h3>{{ workshop.workshop_requirements.heading }}</h3>
+
+                <p>
+                    {{ workshop.workshop_requirements.description }}
+                </p>
+
+                <div class="series-information-notice">
+                    {{ workshop.workshop_requirements.default_laptop_support }}
+                </div>
+
+                <p class="series-registration-notice">
+                    {{ workshop.workshop_requirements.default_registration_notice }}
+                    Attendance is limited to
+                    {{ workshop.workshop_requirements.default_capacity }}
+                    participants per event.
+                </p>
+            </article>
+
+            <article class="series-information-card">
+                <span class="series-information-label">
+                    Learner surveys
+                </span>
+
+                <h3>Help us improve the series</h3>
+
+                <p>
+                    Complete the pre-workshop survey before attending.
+                    After your final session, use the post-workshop survey
+                    to tell us about your experience.
+                </p>
+
+                <div class="series-survey-actions">
+                    <a href="{{ site.pre_survey }}{{ site.github.project_title }}" target="_blank"
+                        rel="noopener noreferrer">
+                        Pre-workshop survey
+                    </a>
+
+                    <a href="{{ site.post_survey }}{{ site.github.project_title }}" target="_blank"
+                        rel="noopener noreferrer">
+                        Post-workshop survey
+                    </a>
+                </div>
+            </article>
+
+        </div>
+
+    </section>
+
 </main>

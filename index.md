@@ -59,6 +59,23 @@ workshop_introduction: >-
   faculty, staff, and researchers who want to work more confidently with
   data, code, and computational tools.
 
+workshop_requirements:
+  heading: "Come ready to learn"
+  description: >-
+    Bring a Mac, Windows, or Linux laptop and its charging cable.
+    Workshop-specific setup instructions will be available from each
+    event listing.
+
+  default_laptop_support: >-
+    Need a laptop? Tennessee Tech students and employees may request
+    information about laptop availability through the ITS Help Desk on
+    the main floor of Volpe Library.
+
+  default_capacity: 20
+
+  default_registration_notice: >-
+    Advance registration is requested. 
+
 # DON'T CHANGE THIS
 layout: workshop
 ---
