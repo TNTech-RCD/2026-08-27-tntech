@@ -1,0 +1,64 @@
+{% assign workshop = site.pages | where: "path", "index.md" | first %}
+{% assign foundational_events = site.events
+    | where: "track", "foundational"
+    | sort: "sort_order" %}
+{% assign programming_events = site.events
+    | where: "track", "programming"
+    | sort: "sort_order" %}
+
+<main class="workshop-series">
+    <section class="series-hero">
+        <p class="series-kicker">
+            {{ site.title | upcase }}<br>
+            {{ site.subtitle | upcase }}
+        </p>
+
+        <h1>
+            One semester.<br>
+            <strong>
+                Eight ways to grow.
+            </strong>
+        </h1>
+
+        <p class="series-introduction">
+            Choose individual workshops or complete a stuctured pathway in foundational computing skills.
+        </p>
+
+        <div class="series-hero-facts">
+            <span>{{ workshop.humandate }}</span>
+            <span>{{ workshop.humantime }}</span>
+            <span>{{ workshop.building }}</span>
+            <span>No experience required</span>
+        </div>
+    </section>
+
+    <section class="series-schedule">
+
+        <div class="series-section-heading">
+            <div>
+                <span>Workshop schedule</span>
+                <h2>Choose where to begin.</h2>
+            </div>
+
+            <p>
+                Unix and Git are repeated offerings. Programming lessons require attendance at both listed meetings.
+            </p>
+        </div>
+
+        <div class="series-event-group">
+            <h3>Foundational skills - choose one offering of each</h3>
+
+            {% for event in foundational_events %}
+                {% include series-event-row.html event=event %}
+            {% endfor %}
+        </div>
+
+        <div class="series-event-group">
+            <h3>Programming lessons - attend both listed meetings</h3>
+
+            {% for event in programming_events %}
+                {% include series-event-row.html event=event %}
+            {% endfor %}
+        </div>
+    </section>
+</main>

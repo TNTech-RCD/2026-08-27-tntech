@@ -1,0 +1,35 @@
+<article class="series-event-row">
+    <div class="series-event-date">
+        {{ include.event.date_label }}
+    </div>
+
+    <div class="series-event-description">
+        <h4>{{ include.event.title }}</h4>
+        <span>{{ include.event.detail }}</span>
+    </div>
+
+    <div class="series-event-actions">
+        {% if include.event.setup_ready%}
+            <a
+                class="series-action series-action-secondary"
+                href="{{ include.event.url | relative_url }}">
+                Setup page
+            </a>
+        {% else %}
+            <span class="series-action-unavailable">
+                Setup comping soon
+            </span>
+        {% endif %}
+
+        {% if include.event.registration_url %}
+        <a class="series-action series-action-primary" 
+        href="{{ include.event.registration_url }}">
+            Register
+    </a>
+        {% else %}
+        <span class="series-action-unavailable">
+            Registration coming soon
+        </span>
+        {% endif %}
+    </div>
+</article>

@@ -692,3 +692,193 @@ $workshop-light: {{ site.workshop_brand.light | default: "#FFFFFF"}};
   }
 }
 
+//---------------------------------
+// Series landing page
+//---------------------------------
+
+.workshop-series {
+  margin: 2rem auto;
+  max-width: 1100px;
+
+  .series-hero {
+    background: $workshop-primary;
+    border-bottom: 8px solid $workshop-accent;
+    color: $workshop-light;
+    padding: 3.5rem 7%;
+  }
+
+  .series-kicker {
+    color: $workshop-accent;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    margin: 0 0 1.25rem;
+  }
+
+  .series-hero h1 {
+    color: $workshop-light;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 400;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin: 0 0 1.25rem;
+  }
+
+  .series-hero h1 strong {
+    color: $workshop-accent;
+    font-weight: 400;
+  }
+
+  .series-introduction {
+    color: rgba($workshop-light, 0.92);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 750px;
+  }
+
+  .series-hero-facts {
+    border-top: 1px solid rgba($workshop-light, 0.25);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem 2rem;
+    margin-top: 1.75rem;
+    padding-top: 1rem;
+  }
+  
+  .series-hero-facts span {
+    color: rgba($workshop-light, 0.9);
+    font-size: 0.95rem;
+  }
+
+  .series-schedule {
+    background: $workshop-light;
+    color: $workshop-dark;
+    padding: 3rem 5%;
+  }
+
+  .series-section-heading {
+    align-items: end;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.2fr);
+    margin-bottom: 2.25rem;
+  }
+
+  .series-section-heading span {
+    color: $workshop-primary;
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+  }
+
+  .series-section-heading h2 {
+    border: 0;
+    color: $workshop-dark;
+    font-size: 1.8rem;
+    line-height: 1.1;
+    margin: 0;
+    padding: 0;
+  }
+
+  .series-section-heading p {
+    color: rgba($workshop-dark, 0.85);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .series-event-group {
+    margin-top: 2rem;
+  }
+
+  .series-event-group h3 {
+    color: $workshop-primary;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.11em;
+    margin: 0 0 0.5rem;
+    text-transform: uppercase;
+  }
+
+  .series-event-row {
+    align-items: center;
+    border-top: 1px solid rgba($workshop-dark, 0.2);
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 120px minmax(0, 1fr) auto;
+    padding: 0.9rem 0.25rem;
+  }
+
+  .series-event-row:last-child {
+    border-bottom: 1px solid rgba($workshop-dark, 0.2);
+  }
+
+  .series-event-date {
+    color: $workshop-primary;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+
+  .series-event-description {
+    min-width: 0;
+  }
+
+  .series-event-description h4 {
+    color: $workshop-dark;
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0 0 0.2rem;
+  }
+
+  .series-event-description span {
+    color: rgba($workshop-dark, 0.75);
+    font-size: 0.8rem;
+  }
+
+  .series-event-actions {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: flex-end;
+  }
+
+  .series-action {
+    border-radius: 3px;
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 0.5rem 0.7rem;
+    text-decoration: none;
+  }
+
+  .series-action-secondary:link,
+  .series-action-secondary:visited {
+    border: 1px solid $workshop-primary;
+    color: $workshop-primary;
+  }
+
+  .series-action-primary:link,
+  .series-action-primary:visited {
+    background: $workshop-primary;
+    border: 1px solid $workshop-primary;
+    color: $workshop-light;
+  }
+
+  .series-action:hover,
+  .series-action:focus {
+    text-decoration: underline;
+  }
+
+  .series-action-unavailable {
+    color: rgba($workshop-dark, 0.65);
+    font-size: 0.75rem;
+    font-style: italic;
+  }
+
+}
+
