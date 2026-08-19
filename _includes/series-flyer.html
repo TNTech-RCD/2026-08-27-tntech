@@ -64,5 +64,16 @@
                 </span>
             </div>
         </div>
+        {% if workshop.workshop_outcomes %}
+        <div class="workshop-outcomes">
+            <h2>Leave ready to:</h2>
+
+            <ul>
+                {% for outcome in workshop.workshop_outcomes %}
+                <li>{{ outcome }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
     </section>
 </main>

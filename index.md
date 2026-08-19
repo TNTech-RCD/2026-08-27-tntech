@@ -23,56 +23,19 @@ collaborative_notes:  # URL for the workshop collaborative notes, e.g. an Etherp
 eventbrite:           # alphanumeric key for Eventbrite registration, e.g., "1234567890AB" (if Eventbrite is being used)
 what3words:           # what3words (https://what3words.com) address of the workshop venue, without leading slashes e.g. "globe.lessening.computers"
 
-### Custom Session Information for the flyer ###
-sessions:
-  - date: 
-    lesson: 
-    detail: 
-    registrationurl: "https://forms.office.com/r/REPLACE-ME"
+### Workshop Series Content ###
+workshop_url: "https://recd.tntech.edu/2026-08-27-tntech"
+workshop_outcomes:
+  - "Work confidently at the command line"
+  - "Track and share work with Git"
+  - "Analyze research data with Python or R"
+  - "Build more reproducible workflows"
 
-  - date: 
-    lesson: 
-    detail: 
-
-  - date: 
-    lesson: 
-    detail: 
-
-  - date: 
-    lesson: 
-    detail: 
-
-  - date: 
-    lesson: 
-    detail: 
-
-  - date: 
-    lesson: 
-    detail: 
-
-  - date: 
-    lesson: 
-    detail: 
-
-  - date: 
-    lesson: 
-    detail: 
-
-  - date: 
-    lesson: 
-    detail: 
-
-  - date: 
-    lesson: 
-    detail: 
-
-  - date: 
-    lesson: 
-    detail: 
-
-  - date: 
-    lesson: 
-    detail: 
+certificate:
+  enable: true
+  title: "Certificate of Achievement"
+  invitation: "Complete the pathway"
+  description: "Complete Unix, Git, and one full Python or R lesson - 12 instructional hours."
 
 # DON'T CHANGE THIS
 layout: workshop
