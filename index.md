@@ -32,10 +32,10 @@ workshop_outcomes:
   - "Build more reproducible workflows"
 
 certificate:
-  enable: true
+  enabled: true
   title: "Certificate of Achievement"
   invitation: "Complete the pathway"
-  description: "Complete Unix, Git, and one full Python or R lesson - 12 instructional hours."
+  description: "Complete Unix, Git, and one full Python or R lesson - 12 instructional hours - no homework."
 
 # DON'T CHANGE THIS
 layout: workshop

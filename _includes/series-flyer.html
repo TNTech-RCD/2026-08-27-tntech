@@ -64,16 +64,31 @@
                 </span>
             </div>
         </div>
-        {% if workshop.workshop_outcomes %}
-        <div class="workshop-outcomes">
-            <h2>Leave ready to:</h2>
+        <div class="workshop-flyer-lower">
+            {% if workshop.workshop_outcomes %}
+            <div class="workshop-outcomes">
+                <h2>Leave ready to:</h2>
+                <ul>
+                    {% for outcome in workshop.workshop_outcomes %}
+                    <li>{{ outcome }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
 
-            <ul>
-                {% for outcome in workshop.workshop_outcomes %}
-                <li>{{ outcome }}</li>
-                {% endfor %}
-            </ul>
+            {% if workshop.certificate.enabled %}
+            <aside class="workshop-certificate">
+                <span class="workshop-certificate-label">
+                    {{ workshop.certificate.invitation }}
+                </span>
+                <h2>
+                    Earn a {{ workshop.certificate.title }}
+                </h2>
+                <p>
+                    {{ workshop.certificate.description }}
+                </p>
+            </aside>
+            {% endif %}
         </div>
-        {% endif %}
     </section>
 </main>
