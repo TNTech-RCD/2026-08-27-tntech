@@ -481,18 +481,18 @@ $tech-black: #000000;
 $tech-grey: #444444;
 $tech-white: #ffffff;
 
-.rcd-flyer {
+.workshop-flyer {
   margin: 2rem auto;
   max-width: 1100px;
 
-  .rcd-hero {
+  .workshop-hero {
     background: $tech-purple;
     border-bottom: 10px solid $tech-gold;
     color: $tech-white;
     padding: 4rem 7%;
   }
 
-  .rcd-kicker {
+  .workshop-kicker {
     color: $tech-gold;
     font-size: 0.75rem;
     font-weight: 700;
@@ -500,7 +500,7 @@ $tech-white: #ffffff;
     margin-bottom: 1.25rem;
   }
 
-  .rcd-hero h1 {
+  .workshop-hero h1 {
     color: $tech-white;
     font-family: Arial, Helvetica, sans-serif;
     font-size: clamp(3rem, 5.5vw, 4.7rem);
@@ -511,19 +511,19 @@ $tech-white: #ffffff;
     max-width: none;
   }
 
-  .rcd-hero h1 strong {
+  .workshop-hero h1 strong {
     color: $tech-gold;
     font-weight: 400;
   }
 
-  .rcd-introduction {
+  .workshop-introduction {
     color: rgba($tech-white, 0.82);
     font-size: 1.2rem;
     line-height: 1.6;
     max-width: 700px;
   }
 
-  .rcd-quick-facts {
+  .workshop-quick-facts {
     align-items: start;
     border-top: 1px solid rgba($tech-white, 0.25);
     display: grid;
@@ -533,15 +533,15 @@ $tech-white: #ffffff;
     padding-top: 1.5rem;
   }
 
-  .rcd-quick-facts strong {
+  .workshop-quick-facts strong {
     color: $tech-white;
   }
 
-    .rcd-fact {
+    .workshop-fact {
     min-width: 0;
   }
 
-  .rcd-fact-label {
+  .workshop-fact-label {
     color: rgba($tech-white, 0.7);
     display: block;
     font-size: 0.75rem;
@@ -549,7 +549,7 @@ $tech-white: #ffffff;
     margin-bottom: 0.55rem;
   }
 
-  .rcd-fact strong {
+  .workshop-fact strong {
     color: $tech-white;
     display: block;
     font-size: 0.95rem;
@@ -558,7 +558,7 @@ $tech-white: #ffffff;
     margin-bottom: 0.25rem;
   }
 
-  .rcd-fact > span:not(.rcd-fact-label) {
+  .workshop-fact > span:not(.workshop-fact-label) {
     color: rgba($tech-white, 0.82);
     display: block;
     font-size: 0.82rem;
