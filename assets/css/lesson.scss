@@ -880,5 +880,76 @@ $workshop-light: {{ site.workshop_brand.light | default: "#FFFFFF"}};
     font-style: italic;
   }
 
+  // Certificate pathway
+
+  .series-certificate {
+    align-items: center;
+    background: rgba($workshop-accent, 0.08);
+    border-bottom: 1px solid rgba($workshop-dark, 0.15);
+    border-top: 1px solid rgba($workshop-dark, 0.15);
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: minmax(0, 1.25fr) auto;
+    padding: 2.25rem 5%;
+  }
+
+  .series-certificate-label {
+    color: $workshop-primary;
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.55rem;
+    text-transform: uppercase;
+  }
+
+  .series-certificate h2 {
+    border: 0;
+    color: $workshop-dark;
+    font-size: 1.55rem;
+    line-height: 1.2;
+    margin: 0 0 0.6rem;
+    padding: 0;
+  }
+
+  .series-certificate p {
+    color: rgba($workshop-dark, 0.85);
+    line-height: 1.6;
+    margin: 0;
+    max-width: 600px;
+  }
+
+  .series-certificate-formula {
+    align-items: center;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .series-certificate-requirement {
+    background: $workshop-light;
+    border: 1px solid rgba($workshop-primary, 0.25);
+    min-width: 82px;
+    padding: 0.8rem 0.65rem;
+    text-align: center;
+  }
+
+  .series-certificate-requirement strong {
+    color: $workshop-primary;
+    display: block;
+    font-size: 1.25rem;
+  }
+
+  .series-certificate-requirement span {
+    color: $workshop-dark;
+    display: block;
+    font-size: 0.7rem;
+    margin-top: 0.25rem;
+  }
+
+  .series-certificate-plus {
+    color: rgba($workshop-dark, 0.65);
+    font-weight: 700;
+  }
+
 }
 

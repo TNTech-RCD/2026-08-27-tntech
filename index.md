@@ -39,6 +39,20 @@ certificate:
   title: "Certificate of Achievement"
   invitation: "Complete the pathway"
   description: "Complete Unix, Git, and one full Python or R lesson. That's 12 instructional hours with no homework."
+  
+  pathway_heading: "Complete four meetings. Show what you learned."
+  pathway_description: >-
+    Attend one Unix offering, one Git offering, and both meetings of any programming lesson.
+
+  requirements:
+    - count: 1
+      label: "Unix"
+
+    - count: 1
+      label: "Git"
+
+    - count: 2
+      label: "Programming"
 
 workshop_introduction: >-
   Free beginner-friendly, hands-on workshops for Tennessee Tech students,

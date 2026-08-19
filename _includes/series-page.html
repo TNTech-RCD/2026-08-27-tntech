@@ -1,10 +1,10 @@
 {% assign workshop = site.pages | where: "path", "index.md" | first %}
 {% assign foundational_events = site.events
-    | where: "track", "foundational"
-    | sort: "sort_order" %}
+| where: "track", "foundational"
+| sort: "sort_order" %}
 {% assign programming_events = site.events
-    | where: "track", "programming"
-    | sort: "sort_order" %}
+| where: "track", "programming"
+| sort: "sort_order" %}
 
 <main class="workshop-series">
     <section class="series-hero">
@@ -49,7 +49,7 @@
             <h3>Foundational skills - choose one offering of each</h3>
 
             {% for event in foundational_events %}
-                {% include series-event-row.html event=event %}
+            {% include series-event-row.html event=event %}
             {% endfor %}
         </div>
 
@@ -57,8 +57,46 @@
             <h3>Programming lessons - attend both listed meetings</h3>
 
             {% for event in programming_events %}
-                {% include series-event-row.html event=event %}
+            {% include series-event-row.html event=event %}
             {% endfor %}
         </div>
     </section>
+
+    {% if workshop.certificate.enabled %}
+    <section class="series-certificate">
+
+        <div class="series-certificate-copy">
+            <span class="series-certificate-label">
+                {{ workshop.certificate.invitation }}
+            </span>
+
+            <h2>
+                {{ workshop.certificate.pathway_heading }}
+            </h2>
+
+            <p>
+                {{ workshop.certificate.pathway_description }}
+            </p>
+        </div>
+
+        <div class="series-certificate-formula" aria-label="Certificate pathway requirements">
+            {% for requirement in workshop.certificate.requirements %}
+
+            <div class="series-certificate-requirement">
+                <strong>{{ requirement.count }}</strong>
+                <span>{{ requirement.label }}</span>
+            </div>
+
+            {% unless forloop.last %}
+            <span class="series-certificate-plus" aria-hidden="true">
+                +
+            </span>
+            {% endunless %}
+
+            {% endfor %}
+        </div>
+
+    </section>
+    {% endif %}
+
 </main>
