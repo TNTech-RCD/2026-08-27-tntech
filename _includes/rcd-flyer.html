@@ -1,0 +1,68 @@
+{% assign workshop = site.pages | where: "path", "index.md" | first %}
+
+<main class="rcd-flyer">
+    <section class="rcd-hero">
+        <p class="rcd-kicker">{{ site.title | upcase }}</p>
+
+        <h1>
+            Build practical <br>
+            <strong>research computing</strong>
+            skills.
+        </h1>
+
+        <p class="rcd-introduction">
+            Free beginner-friendly, hands-on workshops for Tennessee Tech students, faculty, staff, and researchers.
+        </p>
+
+        <div class="rcd-quick-facts">
+
+            <div class="rcd-fact">
+                <span class="rcd-fact-label">
+                    DATES
+                </span>
+                <strong>
+                    {{ workshop.humandate }}
+                </strong>
+                <span>
+                    {{ workshop.humantime }}
+                </span>
+            </div>
+            <div class="rcd-fact">
+                <span class="rcd-fact-label">
+                    LOCATION
+                </span>
+                <strong>
+                    {{ workshop.building }}
+                </strong>
+                <span>
+                    {{ workshop.streetaddress }}
+                </span>
+                <span>
+                    {{ workshop.citystatezip }}
+                </span>
+            </div>
+            <div class="rcd-fact">
+                <span class="rcd-fact-label">
+                    EXPERIENCE
+                </span>
+                <strong>
+                    None required
+                </strong>
+                <span>
+                    Start where you are.
+                </span>
+            </div>
+            <div class="rcd-fact">
+                <span class="rcd-fact-label">
+                    FORMAT
+                </span>
+                <strong>
+                    In person
+                </strong>
+                <span>
+                    Bring your laptop
+                </span>
+            </div>
+        </div>
+    </section>
+</main>
