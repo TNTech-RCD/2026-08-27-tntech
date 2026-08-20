@@ -1112,3 +1112,112 @@ $workshop-light: {{ site.workshop_brand.light | default: "#FFFFFF"}};
   color: $workshop-dark !important;
   text-decoration: none;
 }
+
+//------------------------------------------
+// Series landing page: mobile layout
+//------------------------------------------
+
+@media (max-width: 767px) {
+
+  .workshop-series {
+    margin: 0 auto;
+  }
+
+  // Schedule heading
+
+  .workshop-series .series-section-heading {
+    align-items: start;
+    gap: 0.75rem;
+    grid-template-columns: 1fr;
+  }
+
+  // Event rows
+
+  .workshop-series .series-event-row {
+    align-items: start;
+    grid-template-columns: 78px minmax(0, 1fr);
+  }
+
+  .workshop-series .series-event-actions {
+    grid-column: 2;
+    justify-content: flex-start;
+  }
+
+  // Certificate pathway
+
+  .workshop-series .series-certificate {
+    align-items: start;
+    grid-template-columns: 1fr;
+  }
+
+  .workshop-series .series-certificate-formula {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  // Preparation and survey cards
+
+  .workshop-series .series-information-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+//------------------------------------------
+// Flyer: mobile layout
+//------------------------------------------
+
+@media (max-width: 767px) {
+
+  .workshop-flyer {
+    margin: 0 auto;
+  }
+
+  .workshop-flyer .workshop-hero {
+    padding: 2.5rem 6%;
+  }
+
+  .workshop-flyer .workshop-flyer-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .workshop-flyer .workshop-hero h1 {
+    font-size: 2.65rem;
+  }
+
+  .workshop-flyer .workshop-outcomes ul {
+    grid-template-columns: 1fr;
+  }
+
+  .workshop-flyer .workshop-flyer-sidebar {
+    grid-template-columns: 1fr;
+  }
+
+  // A phone cannot scan a QR code displayed on itself.
+
+  .workshop-flyer .workshop-qr img {
+    display: none;
+  }
+
+  .workshop-flyer .workshop-qr {
+    padding: 1.25rem;
+  }
+
+  .workshop-flyer .workshop-qr a:link,
+  .workshop-flyer .workshop-qr a:visited {
+    background: $workshop-primary;
+    color: $workshop-accent;
+    padding: 0.8rem 1rem;
+    text-decoration: none;
+  }
+
+  .workshop-flyer .workshop-qr a:hover,
+  .workshop-flyer .workshop-qr a:focus {
+    background: $workshop-accent;
+    color: $workshop-dark;
+  }
+
+  .workshop-flyer .workshop-quick-facts {
+    grid-column: auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
