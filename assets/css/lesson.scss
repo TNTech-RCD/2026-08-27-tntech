@@ -955,7 +955,7 @@ $workshop-light: {{ site.workshop_brand.light | default: "#FFFFFF"}};
 
   .series-information {
     background: $workshop-light;
-    padding: 2.75rem 5%;
+    padding: 2.75rem 5% 1.5rem;
   }
 
   .series-information-heading {
@@ -1041,3 +1041,74 @@ $workshop-light: {{ site.workshop_brand.light | default: "#FFFFFF"}};
 
 }
 
+//------------------------------------------
+// Series supporting information
+//------------------------------------------
+
+.workshop-series .series-logistics,
+.workshop-series .series-carpentries {
+  margin: 1.5rem auto 0;
+}
+
+.workshop-series .series-logistics .card,
+.workshop-series .series-carpentries .card {
+  border: 1px solid rgba($workshop-dark, 0.22);
+  border-radius: 0;
+  box-shadow: none;
+  overflow: hidden;
+}
+
+.workshop-series .series-logistics .card-header,
+.workshop-series .series-carpentries .card-header {
+  background: $workshop-primary;
+  border: 0;
+  border-left: 5px solid $workshop-accent;
+  color: $workshop-light;
+  font-size: 1.05rem;
+  font-weight: 700;
+  padding: 0.85rem 1rem;
+}
+
+.workshop-series .series-logistics .card-body,
+.workshop-series .series-carpentries .card-body {
+  color: $workshop-dark;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  padding: 1.25rem;
+}
+
+.workshop-series .series-logistics a,
+.workshop-series .series-carpentries a {
+  color: $workshop-primary;
+  font-weight: 600;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.workshop-series .series-logistics a:hover,
+.workshop-series .series-logistics a:focus,
+.workshop-series .series-carpentries a:hover,
+.workshop-series .series-carpentries a:focus {
+  color: darken($workshop-primary, 12%);
+  text-decoration-thickness: 2px;
+}
+
+.workshop-series a.series-button,
+.workshop-series a.series-button:visited {
+  background: $workshop-primary;
+  border: 2px solid $workshop-primary;
+  color: $workshop-accent !important;
+  display: inline-block;
+  font-weight: 700;
+  margin: 0.5rem 0.35rem 0 0;
+  padding: 0.6rem 0.9rem;
+  text-decoration: none;
+}
+
+.workshop-series a.series-button:hover,
+.workshop-series a.series-button:focus {
+  background: $workshop-accent;
+  border-color: $workshop-accent;
+  color: $workshop-dark !important;
+  text-decoration: none;
+}
