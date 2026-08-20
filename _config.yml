@@ -137,6 +137,10 @@ collections:
     output: true
     permalink: /:path/index.html
 
+  events:
+    output: true
+    permalink: /events/:name/
+
 # Set the default layout for things in the extras collection.
 defaults:
   - values:
@@ -145,6 +149,13 @@ defaults:
   - scope:
       path: ""
       type: extras
+    values:
+      root: ..
+      layout: page
+
+  - scope:
+      path: ""
+      type: events
     values:
       root: ..
       layout: page

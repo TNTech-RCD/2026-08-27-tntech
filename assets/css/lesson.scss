@@ -692,3 +692,423 @@ $workshop-light: {{ site.workshop_brand.light | default: "#FFFFFF"}};
   }
 }
 
+//---------------------------------
+// Series landing page
+//---------------------------------
+
+.workshop-series {
+  margin: 2rem auto;
+  max-width: 1100px;
+
+  .series-hero {
+    background: $workshop-primary;
+    border-bottom: 8px solid $workshop-accent;
+    color: $workshop-light;
+    padding: 3.5rem 7%;
+  }
+
+  .series-kicker {
+    color: $workshop-accent;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    margin: 0 0 1.25rem;
+  }
+
+  .series-hero h1 {
+    color: $workshop-light;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 400;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin: 0 0 1.25rem;
+  }
+
+  .series-hero h1 strong {
+    color: $workshop-accent;
+    font-weight: 400;
+  }
+
+  .series-introduction {
+    color: rgba($workshop-light, 0.92);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 750px;
+  }
+
+  .series-hero-facts {
+    border-top: 1px solid rgba($workshop-light, 0.25);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem 2rem;
+    margin-top: 1.75rem;
+    padding-top: 1rem;
+  }
+  
+  .series-hero-facts span {
+    color: rgba($workshop-light, 0.9);
+    font-size: 0.95rem;
+  }
+
+  .series-schedule {
+    background: $workshop-light;
+    color: $workshop-dark;
+    padding: 3rem 5%;
+  }
+
+  .series-section-heading {
+    align-items: end;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.2fr);
+    margin-bottom: 2.25rem;
+  }
+
+  .series-section-heading span {
+    color: $workshop-primary;
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+  }
+
+  .series-section-heading h2 {
+    border: 0;
+    color: $workshop-dark;
+    font-size: 1.8rem;
+    line-height: 1.1;
+    margin: 0;
+    padding: 0;
+  }
+
+  .series-section-heading p {
+    color: rgba($workshop-dark, 0.85);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .series-event-group {
+    margin-top: 2rem;
+  }
+
+  .series-event-group h3 {
+    color: $workshop-primary;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.11em;
+    margin: 0 0 0.5rem;
+    text-transform: uppercase;
+  }
+
+  .series-event-row {
+    align-items: center;
+    border-top: 1px solid rgba($workshop-dark, 0.2);
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 120px minmax(0, 1fr) auto;
+    padding: 0.9rem 0.25rem;
+  }
+
+  .series-event-row:last-child {
+    border-bottom: 1px solid rgba($workshop-dark, 0.2);
+  }
+
+  .series-event-date {
+    color: $workshop-primary;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+
+  .series-event-description {
+    min-width: 0;
+  }
+
+  .series-event-description h4 {
+    color: $workshop-dark;
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0 0 0.2rem;
+  }
+
+  .series-event-description span {
+    color: rgba($workshop-dark, 0.75);
+    font-size: 0.8rem;
+  }
+
+  .series-event-actions {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: flex-end;
+  }
+
+  .series-action {
+    border-radius: 3px;
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 0.5rem 0.7rem;
+    text-decoration: none;
+  }
+
+  .series-action-secondary:link,
+  .series-action-secondary:visited {
+    border: 1px solid $workshop-primary;
+    color: $workshop-primary;
+  }
+
+  .series-action-primary:link,
+  .series-action-primary:visited {
+    background: $workshop-primary;
+    border: 1px solid $workshop-primary;
+    color: $workshop-light;
+  }
+
+  .series-action:hover,
+  .series-action:focus {
+    text-decoration: underline;
+  }
+
+  .series-action-unavailable {
+    color: rgba($workshop-dark, 0.65);
+    font-size: 0.75rem;
+    font-style: italic;
+  }
+
+  // Certificate pathway
+
+  .series-certificate {
+    align-items: center;
+    background: rgba($workshop-accent, 0.08);
+    border-bottom: 1px solid rgba($workshop-dark, 0.15);
+    border-top: 1px solid rgba($workshop-dark, 0.15);
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: minmax(0, 1.25fr) auto;
+    padding: 2.25rem 5%;
+  }
+
+  .series-certificate-label {
+    color: $workshop-primary;
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.55rem;
+    text-transform: uppercase;
+  }
+
+  .series-certificate h2 {
+    border: 0;
+    color: $workshop-dark;
+    font-size: 1.55rem;
+    line-height: 1.2;
+    margin: 0 0 0.6rem;
+    padding: 0;
+  }
+
+  .series-certificate p {
+    color: rgba($workshop-dark, 0.85);
+    line-height: 1.6;
+    margin: 0;
+    max-width: 600px;
+  }
+
+  .series-certificate-formula {
+    align-items: center;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .series-certificate-requirement {
+    background: $workshop-light;
+    border: 1px solid rgba($workshop-primary, 0.25);
+    min-width: 82px;
+    padding: 0.8rem 0.65rem;
+    text-align: center;
+  }
+
+  .series-certificate-requirement strong {
+    color: $workshop-primary;
+    display: block;
+    font-size: 1.25rem;
+  }
+
+  .series-certificate-requirement span {
+    color: $workshop-dark;
+    display: block;
+    font-size: 0.7rem;
+    margin-top: 0.25rem;
+  }
+
+  .series-certificate-plus {
+    color: rgba($workshop-dark, 0.65);
+    font-weight: 700;
+  }
+
+  // General preparation and surveys
+
+  .series-information {
+    background: $workshop-light;
+    padding: 2.75rem 5% 1.5rem;
+  }
+
+  .series-information-heading {
+    margin-bottom: 1.5rem;
+  }
+
+  .series-information-heading span,
+  .series-information-label {
+    color: $workshop-primary;
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+  }
+
+  .series-information-heading h2 {
+    border: 0;
+    color: $workshop-dark;
+    font-size: 1.55rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .series-information-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .series-information-card {
+    border: 1px solid rgba($workshop-dark, 0.18);
+    padding: 1.25rem;
+  }
+
+  .series-information-card h3 {
+    color: $workshop-dark;
+    font-size: 1.15rem;
+    margin: 0 0 0.75rem;
+  }
+
+  .series-information-card p {
+    color: rgba($workshop-dark, 0.85);
+    line-height: 1.6;
+    margin: 0 0 1rem;
+  }
+
+  .series-information-notice {
+    background: rgba($workshop-accent, 0.1);
+    border-left: 4px solid $workshop-accent;
+    color: $workshop-dark;
+    line-height: 1.55;
+    margin: 1rem 0;
+    padding: 0.85rem 1rem;
+  }
+
+  .series-registration-notice {
+    font-weight: 700;
+  }
+
+  .series-survey-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+  }
+
+  .series-survey-actions a:link,
+  .series-survey-actions a:visited {
+    border: 1px solid $workshop-primary;
+    color: $workshop-primary;
+    display: inline-block;
+    font-size: 0.82rem;
+    font-weight: 700;
+    padding: 0.55rem 0.75rem;
+    text-decoration: none;
+  }
+
+  .series-survey-actions a:hover,
+  .series-survey-actions a:focus {
+    text-decoration: underline;
+  }
+
+}
+
+//------------------------------------------
+// Series supporting information
+//------------------------------------------
+
+.workshop-series .series-logistics,
+.workshop-series .series-carpentries {
+  margin: 1.5rem auto 0;
+}
+
+.workshop-series .series-logistics .card,
+.workshop-series .series-carpentries .card {
+  border: 1px solid rgba($workshop-dark, 0.22);
+  border-radius: 0;
+  box-shadow: none;
+  overflow: hidden;
+}
+
+.workshop-series .series-logistics .card-header,
+.workshop-series .series-carpentries .card-header {
+  background: $workshop-primary;
+  border: 0;
+  border-left: 5px solid $workshop-accent;
+  color: $workshop-light;
+  font-size: 1.05rem;
+  font-weight: 700;
+  padding: 0.85rem 1rem;
+}
+
+.workshop-series .series-logistics .card-body,
+.workshop-series .series-carpentries .card-body {
+  color: $workshop-dark;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  padding: 1.25rem;
+}
+
+.workshop-series .series-logistics a,
+.workshop-series .series-carpentries a {
+  color: $workshop-primary;
+  font-weight: 600;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.workshop-series .series-logistics a:hover,
+.workshop-series .series-logistics a:focus,
+.workshop-series .series-carpentries a:hover,
+.workshop-series .series-carpentries a:focus {
+  color: darken($workshop-primary, 12%);
+  text-decoration-thickness: 2px;
+}
+
+.workshop-series a.series-button,
+.workshop-series a.series-button:visited {
+  background: $workshop-primary;
+  border: 2px solid $workshop-primary;
+  color: $workshop-accent !important;
+  display: inline-block;
+  font-weight: 700;
+  margin: 0.5rem 0.35rem 0 0;
+  padding: 0.6rem 0.9rem;
+  text-decoration: none;
+}
+
+.workshop-series a.series-button:hover,
+.workshop-series a.series-button:focus {
+  background: $workshop-accent;
+  border-color: $workshop-accent;
+  color: $workshop-dark !important;
+  text-decoration: none;
+}

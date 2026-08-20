@@ -1,0 +1,207 @@
+{% assign workshop = site.pages | where: "path", "index.md" | first %}
+{% assign isOfficial = site.official_curricula | has: site.carpentry %}
+
+{% comment %}
+LOCATION
+
+This block displays the address and links to maps showing directions
+if the latitude and longitude of the workshop have been set. You
+can use https://www.latlong.net/ to find the lat/long of an
+address.
+{% endcomment %}
+
+{% assign begin_address = workshop.address | slice: 0, 4 | downcase %}
+{% if workshop.address == "online" %}
+{% assign online = "true_private" %}
+{% elsif begin_address contains "http" %}
+{% assign online = "true_public" %}
+{% else %}
+{% assign online = "false" %}
+{% endif %}
+
+<div class="card mb-2">
+    <h5 class="card-header">Workshop Logistics</h5>
+    <div class="card-body">
+        <dl class="mb-0">
+            <div class="row">
+                <dt class="col-sm-2 col-md-2 py-2 px-3 bg-body-light text-body-secondary fw-bold">Who</dt>
+                <dd class="col py-2 px-3 mx-0 mb-0">
+                    {% comment %}
+                    AUDIENCE
+
+                    Explain who your audience is. (In particular, tell readers if the
+                    workshop is only open to people from a particular institution.
+                    {% endcomment %}
+                    {% assign who_file = site.carpentry | append: '/who.html' %}
+                    {% if isOfficial %}
+                    {% include {{ who_file }} %}
+                    {% endif %}
+                </dd>
+            </div>
+            <div class="row">
+                <dt class="col-sm-2 col-md-2 py-2 px-3 bg-body-light text-body-secondary fw-bold">Where</dt>
+                <dd class="col py-2 px-3 mx-0 mb-0">
+                    {% if workshop.latitude and workshop.longitude and online == "false" %}
+                    {{workshop.address}}.
+                    Get directions with
+                    <a
+                        href="//www.openstreetmap.org/?mlat={{workshop.latitude}}&mlon={{workshop.longitude}}&zoom=16">OpenStreetMap</a>
+                    or
+                    <a href="//maps.google.com/maps?q={{workshop.latitude}},{{workshop.longitude}}">Google Maps</a>.
+                    {% if workshop.what3words %}
+                    What3Words location:
+                    <a href="https://what3words.com/{{workshop.what3words}}">///{{workshop.what3words}}</a>.
+                    {%endif %}
+                    {% elsif online == "true_public" %}
+                    <p id="where">
+                        Online at <a href="{{workshop.address}}">{{workshop.address}}</a>.
+                        If you need a password or other information to access the training,
+                        the instructor will pass it on to you before the workshop.
+                    </p>
+                    {% elsif online == "true_private" %}
+                    <p id="where">
+                        This training will take place online.
+                        The instructors will provide you with the information you will need to connect to this meeting.
+                    </p>
+                    {% endif %}
+                </dd>
+            </div>
+            <div class="row">
+                <dt class="col-sm-2 col-md-2 py-2 px-3 bg-body-light text-body-secondary fw-bold">When</dt>
+                <dd class="col py-2 px-3 mx-0 mb-0">
+                    {% comment %}
+                    DATE
+
+                    This block displays the date and links to Google Calendar.
+                    {% endcomment %}
+                    {% if workshop.humandate %}
+                    <p id="when">
+                        {{workshop.humandate}}; {{workshop.humantime}}
+                    </p>
+                    {% endif %}
+                </dd>
+            </div>
+            <div class="row">
+                <dt class="col-sm-2 col-md-2 py-2 px-3 bg-body-light text-body-secondary fw-bold">Requirements</dt>
+                <dd class="col py-2 px-3 mx-0 mb-0">
+                    {% comment %}
+                    SPECIAL REQUIREMENTS
+
+                    Modify the block below if there are any special requirements.
+                    {% endcomment %}
+                    <p id="requirements">
+                        {% if online == "false" %}
+                        Participants must bring a laptop with a
+                        Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) that they have
+                        administrative privileges on.
+                        {% else %}
+                        Participants must have access to a computer with a
+                        Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) that they have
+                        administrative privileges on.
+                        {% endif %}
+                        Each event listing links to the software and data setup instructions required for that lesson.
+                    </p>
+                </dd>
+            </div>
+            <div class="row">
+                <dt class="col-sm-2 col-md-2 py-2 px-3 bg-body-light text-body-secondary fw-bold">Accessibility</dt>
+                <dd class="col py-2 px-3 mx-0 mb-0">
+                    {% comment %}
+                    ACCESSIBILITY
+
+                    Modify the block below if there are any barriers to accessibility or special instructions.
+                    {% endcomment %}
+
+                    <p id="accessibility">
+                        We are committed to making this workshop accessible to everybody.
+                        {% if online == "false" %}
+                        The workshop organizers have checked that:
+                        <br />
+                    <ul>
+                        <li>The room is wheelchair / scooter accessible.</li>
+                        <li>Accessible restrooms are available.</li>
+                    </ul>
+                    {% endif %}
+                    </p>
+                    <p>
+                        We are dedicated to providing a positive and accessible learning environment for all.
+                        We do not require participants to provide documentation of disabilities or disclose any
+                        unnecessary personal information.
+                        However, we do want to help create an inclusive, accessible experience for all participants.
+                        We encourage you to share any information that would be helpful to make your Carpentries
+                        experience accessible.
+                        To request accessibility support for this workshop, please fill out the
+                        <a href="https://carpentries.typeform.com/to/B2OSYaD0">accessibility support request form</a>.
+                        If you have questions or need assistance with the accessibility support form please <a
+                            href="mailto:team@carpentries.org">email us</a>.
+                    </p>
+                    <p>
+                        <a href="https://glosario.carpentries.org/">Glosario</a> is a multilingual glossary for
+                        computing and data science terms.
+                        The glossary helps learners attend workshops and use our lessons to make sense of computational
+                        and programming jargon written in English by offering it in their native language.
+                        Translating data science terms also provides a teaching tool for Carpentries Instructors to
+                        reduce barriers for their learners.
+                    </p>
+                </dd>
+            </div>
+            <div class="row">
+                <dt class="col-sm-2 col-md-2 py-2 px-3 bg-body-light text-body-secondary fw-bold">Workshop Recordings
+                </dt>
+                <dd class="col py-2 px-3 mx-0 mb-0">
+                    {% comment %}
+                    WORKSHOP RECORDINGS
+
+                    Modify or remove the block below if you plan to record the workshop.
+                    {% endcomment %}
+                    <p id="recordings">
+                        Carpentries workshops are designed to be interactive rather than lecture-based, with lessons
+                        that build upon one another.
+                        To foster a positive online learning environment, we strongly recommend that participants join
+                        in real time.
+                        As a result, workshop recordings are not recommended and may not be available to learners.
+                    </p>
+                </dd>
+            </div>
+            <div class="row">
+                <dt class="col-sm-2 col-md-2 py-2 px-3 bg-body-light text-body-secondary fw-bold">Contact</dt>
+                <dd class="col py-2 px-3 mx-0 mb-0">
+                    {% comment %}
+                    CONTACT EMAIL ADDRESS
+
+                    Display the contact email address set in the configuration file.
+                    {% endcomment %}
+                    <p id="contact">
+                        Please email
+                        {% if workshop.email %}
+                        {% for email in workshop.email %}
+                        {% if forloop.last and workshop.email.size > 1 %}
+                        or
+                        {% else %}
+                        {% unless forloop.first %}
+                        ,
+                        {% endunless %}
+                        {% endif %}
+                        <a href='mailto:{{email}}'>{{email}}</a>
+                        {% endfor %}
+                        {% else %}
+                        to-be-announced
+                        {% endif %}
+                        for more information.
+                    </p>
+                </dd>
+            </div>
+
+            <div class="row">
+                <dt class="col-sm-2 col-md-2 py-2 px-3 bg-body-light text-body-secondary fw-bold">Workshop FAQ</dt>
+                <dd class="col py-2 px-3 mx-0 mb-0">
+                    <p id="workshops-faq">
+                        For answers to frequently asked questions about workshops,
+                        refer to <a href="https://carpentries.org/workshops/workshops-faq">the Carpentries Workshop
+                            FAQ</a>.
+                    </p>
+                </dd>
+            </div>
+        </dl>
+    </div>
+</div>

@@ -1,0 +1,172 @@
+{% assign workshop = site.pages | where: "path", "index.md" | first %}
+{% assign foundational_events = site.events
+| where: "track", "foundational"
+| sort: "sort_order" %}
+{% assign programming_events = site.events
+| where: "track", "programming"
+| sort: "sort_order" %}
+
+<main class="workshop-series">
+    <section class="series-hero">
+        <p class="series-kicker">
+            {{ site.title | upcase }}<br>
+            {{ site.subtitle | upcase }}
+        </p>
+
+        <h1>
+            One semester.<br>
+            <strong>
+                Eight ways to grow.
+            </strong>
+        </h1>
+
+        <p class="series-introduction">
+            Choose individual workshops or complete a stuctured pathway in foundational computing skills.
+        </p>
+
+        <div class="series-hero-facts">
+            <span>{{ workshop.humandate }}</span>
+            <span>{{ workshop.humantime }}</span>
+            <span>{{ workshop.building }}</span>
+            <span>No experience required</span>
+        </div>
+    </section>
+
+    <section class="series-schedule">
+
+        <div class="series-section-heading">
+            <div>
+                <span>Workshop schedule</span>
+                <h2>Choose where to begin.</h2>
+            </div>
+
+            <p>
+                Unix and Git are repeated offerings. Programming lessons require attendance at both listed meetings.
+            </p>
+        </div>
+
+        <div class="series-event-group">
+            <h3>Foundational skills - choose one offering of each</h3>
+
+            {% for event in foundational_events %}
+            {% include series-event-row.html event=event %}
+            {% endfor %}
+        </div>
+
+        <div class="series-event-group">
+            <h3>Programming lessons - attend both listed meetings</h3>
+
+            {% for event in programming_events %}
+            {% include series-event-row.html event=event %}
+            {% endfor %}
+        </div>
+    </section>
+
+    {% if workshop.certificate.enabled %}
+    <section class="series-certificate">
+
+        <div class="series-certificate-copy">
+            <span class="series-certificate-label">
+                {{ workshop.certificate.invitation }}
+            </span>
+
+            <h2>
+                {{ workshop.certificate.pathway_heading }}
+            </h2>
+
+            <p>
+                {{ workshop.certificate.pathway_description }}
+            </p>
+        </div>
+
+        <div class="series-certificate-formula" aria-label="Certificate pathway requirements">
+            {% for requirement in workshop.certificate.requirements %}
+
+            <div class="series-certificate-requirement">
+                <strong>{{ requirement.count }}</strong>
+                <span>{{ requirement.label }}</span>
+            </div>
+
+            {% unless forloop.last %}
+            <span class="series-certificate-plus" aria-hidden="true">
+                +
+            </span>
+            {% endunless %}
+
+            {% endfor %}
+        </div>
+
+    </section>
+    {% endif %}
+
+    <section class="series-information">
+
+        <div class="series-information-heading">
+            <span>What to know</span>
+            <h2>Prepare, participate, and follow up.</h2>
+        </div>
+
+        <div class="series-information-grid">
+
+            <article class="series-information-card">
+                <span class="series-information-label">
+                    Preparation
+                </span>
+
+                <h3>{{ workshop.workshop_requirements.heading }}</h3>
+
+                <p>
+                    {{ workshop.workshop_requirements.description }}
+                </p>
+
+                <div class="series-information-notice">
+                    {{ workshop.workshop_requirements.default_laptop_support }}
+                </div>
+
+                <p class="series-registration-notice">
+                    {{ workshop.workshop_requirements.default_registration_notice }}
+                    Attendance is limited to
+                    {{ workshop.workshop_requirements.default_capacity }}
+                    participants per event.
+                </p>
+            </article>
+
+            <article class="series-information-card">
+                <span class="series-information-label">
+                    Learner surveys
+                </span>
+
+                <h3>Help us improve the series</h3>
+
+                <p>
+                    Complete the pre-workshop survey before attending.
+                    After your final session, use the post-workshop survey
+                    to tell us about your experience.
+                </p>
+
+                <div class="series-survey-actions">
+                    <a class="series-button" href="{{ site.pre_survey }}{{ site.github.project_title }}" target="_blank"
+                        rel="noopener noreferrer">
+                        Pre-workshop survey
+                    </a>
+
+                    <a class="series-button" href="{{ site.post_survey }}{{ site.github.project_title }}" target="_blank"
+                        rel="noopener noreferrer">
+                        Post-workshop survey
+                    </a>
+                </div>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="series-logistics">
+        {% include series-logistics.html %}
+    </section>
+
+    <section class="series-carpentries">
+        {% include series-carpentries.html %}
+    </section>
+
+</main>
