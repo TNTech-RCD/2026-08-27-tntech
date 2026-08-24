@@ -854,6 +854,8 @@ $workshop-light: {{ site.workshop_brand.light | default: "#FFFFFF"}};
     font-weight: 700;
     padding: 0.5rem 0.7rem;
     text-decoration: none;
+    min-width: 92px;
+    text-align: center;
   }
 
   .series-action-secondary:link,
@@ -1219,5 +1221,101 @@ $workshop-light: {{ site.workshop_brand.light | default: "#FFFFFF"}};
   .workshop-flyer .workshop-quick-facts {
     grid-column: auto;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+//------------------------------------------
+// Event setup pages
+//------------------------------------------
+
+.event-setup {
+  color: $workshop-dark;
+  font-size: 1rem;
+  line-height: 1.65;
+  margin: 0 auto;
+  max-width: 900px;
+
+  h2 {
+    border-bottom: 4px solid $workshop-accent;
+    color: $workshop-primary;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.6rem;
+  }
+
+  h3 {
+    border-left: 5px solid $workshop-accent;
+    color: $workshop-primary;
+    font-size: 1.5rem;
+    margin-top: 2.25rem;
+    padding-left: 0.75rem;
+  }
+
+  h4 {
+    background: $workshop-primary;
+    color: $workshop-light;
+    font-size: 1.2rem;
+    margin-top: 1.75rem;
+    padding: 0.55rem 0.8rem;
+  }
+
+  h5 {
+    color: $workshop-primary;
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+    margin-top: 1.5rem;
+  }
+
+  > h2 + p {
+    background: rgba($workshop-accent, 0.12);
+    border-left: 5px solid $workshop-accent;
+    padding: 1rem 1.25rem;
+  }
+
+  li {
+    margin-bottom: 0.35rem;
+  }
+
+  a {
+    font-weight: 600;
+  }
+
+  blockquote {
+    background: rgba($workshop-accent, 0.1);
+    border-left: 5px solid $workshop-accent;
+    color: $workshop-dark;
+    margin: 1.25rem 0;
+    padding: 0.8rem 1rem;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  pre {
+    border-left-color: $workshop-primary;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .event-setup {
+    font-size: 1rem;
+
+    h2 {
+      font-size: 1.65rem;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+    }
+
+    h4 {
+      font-size: 1.1rem;
+    }
+
+    ol,
+    ul {
+      padding-left: 1.4rem;
+    }
   }
 }
