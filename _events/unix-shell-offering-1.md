@@ -31,8 +31,7 @@ No previous command-line experience is required. Please complete the steps below
 2. [Download `shell-lesson-data.zip`](https://swcarpentry.github.io/shell-novice/data/shell-lesson-data.zip).
 3. Move the downloaded ZIP file to your Desktop.
 4. Extract the file. You should have a folder named `shell-lesson-data` on your Desktop.
-5. Open the shell application recommended for your operating system.
-6. [Complete the pre-workshop survey](https://carpentries.typeform.com/to/wi32rS?slug=2026-08-27-tntech).
+5. [Complete the pre-workshop survey](https://carpentries.typeform.com/to/wi32rS?slug=2026-08-27-tntech).
 
 ### Operating-system instructions
 
