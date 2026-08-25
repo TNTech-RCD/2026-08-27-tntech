@@ -24,8 +24,6 @@ No previous command-line experience is required. Please complete the steps below
 
 - A laptop running macOS, Windows, or Linux
 - Your laptop’s charging cable
-- A current web browser
-- Your Tennessee Tech login credentials
 
 ### Complete these steps before the workshop
 
@@ -50,14 +48,35 @@ For this workshop, we recommend **Git Bash**, which is installed with Git for Wi
 
 ##### Install Git Bash
 
-If Git Bash is not installed:
+If Git Bash is not already installed:
 
 1. Download [Git for Windows](https://gitforwindows.org/).
-2. Run the installer.
-3. Keep the default installation choices.
-4. When installation finishes, open the Start menu and launch **Git Bash**.
+2. Run the installer. Keep the default selections except for these two screens:
 
-If your Tennessee Tech-managed computer prevents installation, contact the ITS Help Desk or bring the computer to the workshop and arrive early.
+   - On **Choosing the default editor used by Git**, select **Use the Nano editor by default**.
+
+     <!-- ![Select Nano as the default Git editor in the Git for Windows installer.]({{ '/assets/img/workshop/nano_git_bash.png' | relative_url }}) -->
+
+    <figure class="event-setup-screenshot">
+        <img
+            src="{{ '/assets/img/workshop/nano_git_bash.png' | relative_url }}"
+            alt="Select Nano as the default Git editor in the Git for Windows installer.">
+    </figure>
+
+   - On **Adjusting the name of the initial branch in new repositories**, select **Override the default branch name for new repositories** and enter `main`.
+<!-- 
+     ![Set main as the default initial branch name in the Git for Windows installer.]({{ '/assets/img/workshop/main_branch_git_bash.png' | relative_url }}) -->
+
+    <figure class="event-setup-screenshot">
+        <img
+            src="{{ '/assets/img/workshop/main_branch_git_bash.png' | relative_url }}"
+            alt="Set main as the default initial branch name in the Git for Windows installer.">
+    </figure>
+
+3. Continue through the remaining screens using the default selections, and then select **Install**.
+4. When installation finishes, open the Windows Start menu and launch **Git Bash**.
+
+If your Tennessee Tech-managed computer prevents installation, contact the ITS Help Desk, visit our open office hours, or bring the computer to the workshop and arrive early.
 
 > Already use WSL? You may use an existing WSL installation if you are comfortable with it, but file paths may differ from those demonstrated during the workshop. Our Windows demonstrations and support will use Git Bash.
 

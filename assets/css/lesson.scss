@@ -1297,6 +1297,18 @@ $workshop-light: {{ site.workshop_brand.light | default: "#FFFFFF"}};
   }
 }
 
+.event-setup-screenshot {
+  margin: 1rem auto 1.75rem;
+  max-width: 600px;
+
+  img {
+    border: 1px solid rgba($workshop-dark, 0.2);
+    display: block;
+    height: auto;
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .event-setup {
     font-size: 1rem;
