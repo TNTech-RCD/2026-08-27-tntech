@@ -76,6 +76,20 @@ workshop_requirements:
   default_registration_notice: >-
     Advance registration is requested. 
 
+
+# Digital signage
+signage_kicker: "Free Fall 2026 Workshop Series"
+signage_headline: "Build practical"
+signage_headline_emphasis: "computing foundations."
+
+signage_outcomes:
+  - "Use Unix and Git • Analyze data with Python or R"
+  - "Build reproducible computational workflows"
+
+signage_short_time: "6–9 PM"
+signage_experience: "Beginners welcome"
+signage_presenter: "Research Computing & Data"
+
 # DON'T CHANGE THIS
 layout: workshop
 series_landing: true

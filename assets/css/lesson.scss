@@ -1,29 +1,28 @@
----
----
-
+--- 
+--- 
 //----------------------------------------
 // Colors.
 //----------------------------------------
 
 // branding
-$color-brand:       #2b3990 !default;
+$color-brand: #2b3990 !default;
 
 // code boxes
-$color-error:       #bd2c00 !default;
-$color-warning:     #cda01d !default;
-$color-output:      #303030 !default;
-$color-source:      #360084 !default;
+$color-error: #bd2c00 !default;
+$color-warning: #cda01d !default;
+$color-output: #303030 !default;
+$color-source: #360084 !default;
 
 // blockquotes
-$color-callout:     #f4fd9c !default;
-$color-caution:     #cf000e !default;
-$color-challenge:   #eec275 !default;
-$color-checklist:   #dfd2a0 !default;
-$color-discussion:  #eec275 !default;
-$color-keypoints:   #7ae78e !default;
-$color-objectives:  #daee84 !default;
-$color-prereq:      #9cd6dc !default;
-$color-solution:    #ded4b9 !default;
+$color-callout: #f4fd9c !default;
+$color-caution: #cf000e !default;
+$color-challenge: #eec275 !default;
+$color-checklist: #dfd2a0 !default;
+$color-discussion: #eec275 !default;
+$color-keypoints: #7ae78e !default;
+$color-objectives: #daee84 !default;
+$color-prereq: #9cd6dc !default;
+$color-solution: #ded4b9 !default;
 $color-testimonial: #fc8dc1 !default;
 
 //----------------------------------------
@@ -31,65 +30,168 @@ $color-testimonial: #fc8dc1 !default;
 //----------------------------------------
 
 @mixin cdSetup($color) {
-    color: $color;
-    border: solid 0.065em $color;
-    border-left: solid 0.325em $color;
-    margin: 0.975em 0.325em 0.65em 0;
-    border-radius: 0.26em 0 0 0.26em;
+  color: $color;
+  border: solid 0.065em $color;
+  border-left: solid 0.325em $color;
+  margin: 0.975em 0.325em 0.65em 0;
+  border-radius: 0.26em 0 0 0.26em;
 }
 
 // Generic setup. Has to come before .error, .warning, and .output
-div[class^='language-'] { @include cdSetup($color-source); }
+div[class^='language-'] {
+  @include cdSetup($color-source);
+}
 
-div.source  { @include cdSetup($color-source); }
-div.error   { @include cdSetup($color-error); }
-div.warning { @include cdSetup($color-warning); }
-div.output  { @include cdSetup($color-output); }
+div.source {
+  @include cdSetup($color-source);
+}
+
+div.error {
+  @include cdSetup($color-error);
+}
+
+div.warning {
+  @include cdSetup($color-warning);
+}
+
+div.output {
+  @include cdSetup($color-output);
+}
 
 div.error::before,
 div.warning:before,
 div.output::before,
 div.source::before,
 div[class^='language-']::before {
-    background-color: #f2eff6;
-    display: block;
-    font-weight: bold;
-    padding: 0.325em 0.65em;
+  background-color: #f2eff6;
+  display: block;
+  font-weight: bold;
+  padding: 0.325em 0.65em;
 }
 
 div[class^='language-']::before,
-div.source::before { content: "Code"; }
+div.source::before {
+  content: "Code";
+}
 
-div.error::before  { background-color: #ffebe6; content: "Error"; }
-div.warning:before { background-color: #f8f4e8; content:" Warning"; }
-div.output::before { background-color: #efefef; content: "Output"; }
+div.error::before {
+  background-color: #ffebe6;
+  content: "Error";
+}
 
-div.language-basic::before    { content: "Basic"; }
-div.language-bash::before     { content: "Bash"; }
-div.language-c::before        { content: "C"; }
-div.language-chapel::before   { content: "Chapel"; }
-div.language-cmake::before    { content: "CMake"; }
-div.language-cpp::before      { content: "C++"; }
-div.language-cuda::before     { content: "Cuda"; }
-div.language-d::before        { content: "D"; }
-div.language-fortran::before  { content: "Fortran"; }
-div.language-go::before       { content: "Go"; }
-div.language-html::before     { content: "HTML"; }
-div.language-java::before     { content: "Java"; }
-div.language-julia::before    { content: "Julia"; }
-div.language-kotlin::before   { content: "Kotlin"; }
-div.language-lua::before      { content: "Lua"; }
-div.language-make::before     { content: "Make"; }
-div.language-matlab::before   { content: "MATLAB"; }
-div.language-opencl::before   { content: "OpenCL"; }
-div.language-perl::before     { content: "Perl"; }
-div.language-python::before   { content: "Python"; }
-div.language-r::before        { content: "R"; }
-div.language-ruby::before     { content: "Ruby"; }
-div.language-rust::before     { content: "Rust"; }
-div.language-scala::before    { content: "Scala"; }
-div.language-sql::before      { content: "SQL"; }
-div.language-vulkan::before   { content: "Vulkan"; }
+div.warning:before {
+  background-color: #f8f4e8;
+  content: " Warning";
+}
+
+div.output::before {
+  background-color: #efefef;
+  content: "Output";
+}
+
+div.language-basic::before {
+  content: "Basic";
+}
+
+div.language-bash::before {
+  content: "Bash";
+}
+
+div.language-c::before {
+  content: "C";
+}
+
+div.language-chapel::before {
+  content: "Chapel";
+}
+
+div.language-cmake::before {
+  content: "CMake";
+}
+
+div.language-cpp::before {
+  content: "C++";
+}
+
+div.language-cuda::before {
+  content: "Cuda";
+}
+
+div.language-d::before {
+  content: "D";
+}
+
+div.language-fortran::before {
+  content: "Fortran";
+}
+
+div.language-go::before {
+  content: "Go";
+}
+
+div.language-html::before {
+  content: "HTML";
+}
+
+div.language-java::before {
+  content: "Java";
+}
+
+div.language-julia::before {
+  content: "Julia";
+}
+
+div.language-kotlin::before {
+  content: "Kotlin";
+}
+
+div.language-lua::before {
+  content: "Lua";
+}
+
+div.language-make::before {
+  content: "Make";
+}
+
+div.language-matlab::before {
+  content: "MATLAB";
+}
+
+div.language-opencl::before {
+  content: "OpenCL";
+}
+
+div.language-perl::before {
+  content: "Perl";
+}
+
+div.language-python::before {
+  content: "Python";
+}
+
+div.language-r::before {
+  content: "R";
+}
+
+div.language-ruby::before {
+  content: "Ruby";
+}
+
+div.language-rust::before {
+  content: "Rust";
+}
+
+div.language-scala::before {
+  content: "Scala";
+}
+
+div.language-sql::before {
+  content: "SQL";
+}
+
+div.language-vulkan::before {
+  content: "Vulkan";
+}
 
 div.info {
   padding: 20px;
@@ -113,38 +215,51 @@ div.info {
 // Stripe above tab panels where OS tabs are shown
 ul.nav.nav-tabs {
   background: #E1E1E1;
-  border-radius: 0.26em 0.26em 0 0;  // 0.26em == @border-radius-base
+  border-radius: 0.26em 0.26em 0 0; // 0.26em == @border-radius-base
 }
 
 // adjust line height of links so that clickable area (of OS tabs) is 2.86em high
-ul.nav.nav-tabs li a { line-height: 1.56em; } // or 1.714285716
+ul.nav.nav-tabs li a {
+  line-height: 1.56em;
+}
+
+// or 1.714285716
 
 // This color provides better contrast ratio on most backgrounds used on Carpentries websites
 // 9.24 on FFFFFF: https://webaim.org/resources/contrastchecker/?fcolor=204A6F&bcolor=FFFFFF&api (body)
 // 8.78 on F9F9F9: https://webaim.org/resources/contrastchecker/?fcolor=204A6F&bcolor=F9F9F9&api (tables)
 // 7.07 on E1E1E1: https://webaim.org/resources/contrastchecker/?fcolor=204A6F&bcolor=E1E1E1&api (tab panels)
-a { color: #204A6F; }
+a {
+  color: #204A6F;
+}
 
 // .yt-wrapper2 can be used for limiting maximum width of YouTube iframes only
-.yt-wrapper2 { max-width: 100%; margin: 0 auto; }
+.yt-wrapper2 {
+  max-width: 100%;
+  margin: 0 auto;
+}
 
 // Use full width on small displays
-@media only screen and (max-width: 39em) { .yt-wrapper2 { max-width: 100%; } }
+@media only screen and (max-width: 39em) {
+  .yt-wrapper2 {
+    max-width: 100%;
+  }
+}
 
 .yt-wrapper {
-    height: 0;
-    margin-top: 0.65em;
-    padding-bottom: 56.25%;
-    position: relative;
-    width: 100%;
+  height: 0;
+  margin-top: 0.65em;
+  padding-bottom: 56.25%;
+  position: relative;
+  width: 100%;
 }
 
 .yt-frame {
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 //----------------------------------------
@@ -174,6 +289,7 @@ $codeblock-padding: 0.325em !default;
     margin-top: 0em;
     margin-left: -$codeblock-padding; // to move back to the left margin of the enclosing blockquote
   }
+
   h2:before {
     font-family: 'Glyphicons Halflings';
     content: $glyph;
@@ -186,16 +302,45 @@ $codeblock-padding: 0.325em !default;
 
 }
 
-.callout{ @include bkSetup($color-callout, "\e146"); }
-.caution{ @include bkSetup($color-caution, "\e107"); }
-.challenge{ @include bkSetup($color-challenge, "\270f"); }
-.checklist{ @include bkSetup($color-checklist, "\e067"); }
-.discussion{ @include bkSetup($color-discussion, "\e123"); }
-.keypoints{ @include bkSetup($color-keypoints, "\e101"); }
-.objectives{ @include bkSetup($color-objectives, "\e085"); }
-.prereq{ @include bkSetup($color-prereq, "\e124"); }
-.solution{ @include bkSetup($color-solution, "\e105"); }
-.testimonial{ @include bkSetup($color-testimonial, "\e143"); }
+.callout {
+  @include bkSetup($color-callout, "\e146");
+}
+
+.caution {
+  @include bkSetup($color-caution, "\e107");
+}
+
+.challenge {
+  @include bkSetup($color-challenge, "\270f");
+}
+
+.checklist {
+  @include bkSetup($color-checklist, "\e067");
+}
+
+.discussion {
+  @include bkSetup($color-discussion, "\e123");
+}
+
+.keypoints {
+  @include bkSetup($color-keypoints, "\e101");
+}
+
+.objectives {
+  @include bkSetup($color-objectives, "\e085");
+}
+
+.prereq {
+  @include bkSetup($color-prereq, "\e124");
+}
+
+.solution {
+  @include bkSetup($color-solution, "\e105");
+}
+
+.testimonial {
+  @include bkSetup($color-testimonial, "\e143");
+}
 
 .callout h3,
 .challenge h3,
@@ -206,25 +351,55 @@ $codeblock-padding: 0.325em !default;
 .prereq h3,
 .solution h3,
 .testimonial h3 {
-font-size: 1.17em;
+  font-size: 1.17em;
 }
 
-.challenge    { background-color: #eec27520; }
-.callout      { background-color: #f4fd9c20; }
-.challenge    { background-color: #eec27520; }
-.checklist    { background-color: #dfd2a020; }
-.discussion   { background-color: #eec27520; }
-.keypoints    { background-color: #7ae78e20; }
-.objectives   { background-color: #daee8420; }
-.prereq       { background-color: #9cd6dc20; }
-.solution     { background-color: #ded4b94d; }
-.testimonial  { background-color: #fc8dc120; }
+.challenge {
+  background-color: #eec27520;
+}
+
+.callout {
+  background-color: #f4fd9c20;
+}
+
+.challenge {
+  background-color: #eec27520;
+}
+
+.checklist {
+  background-color: #dfd2a020;
+}
+
+.discussion {
+  background-color: #eec27520;
+}
+
+.keypoints {
+  background-color: #7ae78e20;
+}
+
+.objectives {
+  background-color: #daee8420;
+}
+
+.prereq {
+  background-color: #9cd6dc20;
+}
+
+.solution {
+  background-color: #ded4b94d;
+}
+
+.testimonial {
+  background-color: #fc8dc120;
+}
 
 blockquote p {
-    margin: 0.325em;
+  margin: 0.325em;
 }
-blockquote :not(h2) + p {
-    padding-top: 1em;
+
+blockquote :not(h2)+p {
+  padding-top: 1em;
 }
 
 //----------------------------------------
@@ -232,10 +407,12 @@ blockquote :not(h2) + p {
 //----------------------------------------
 
 .navbar-nav .nav-item {
-    margin-left: 0.65em;
+  margin-left: 0.65em;
 }
 
-blockquote { font-size: inherit; }
+blockquote {
+  font-size: inherit;
+}
 
 a code {
   color: #006cad;
@@ -266,20 +443,27 @@ code {
   background-color: #e7e7e7;
 }
 
-samp { hyphens: none; }
+samp {
+  hyphens: none;
+}
 
-dt { margin-top: 1.3em; }
-dd { margin-left: 2em; }
+dt {
+  margin-top: 1.3em;
+}
+
+dd {
+  margin-left: 2em;
+}
 
 article img {
-    display: block;
-    margin: 1.3em auto;
-    max-width: 100%;
+  display: block;
+  margin: 1.3em auto;
+  max-width: 100%;
 }
 
 article img.inline {
-    display: inline-block;
-    margin: auto;
+  display: inline-block;
+  margin: auto;
 }
 
 article h2 {
@@ -292,15 +476,17 @@ article h2 {
 // article h3 { margin: 2.6em 0 1.04em; }
 
 article pre {
-    margin: 0;
-    border: 0;
+  margin: 0;
+  border: 0;
 }
 
 //----------------------------------------
 // Miscellaneous.
 //----------------------------------------
 
-.figures h2 { margin-top: 6.5em; }
+.figures h2 {
+  margin-top: 6.5em;
+}
 
 .maintitle {
   text-align: center;
@@ -311,13 +497,12 @@ article pre {
 }
 
 footer .license,
-footer .help-links
-{
-    font-size: inherit;
-    margin-top: 0.65em;
-    margin-bottom: 0.65em;
-    font-weight: 500;
-    line-height: 1.1;
+footer .help-links {
+  font-size: inherit;
+  margin-top: 0.65em;
+  margin-bottom: 0.65em;
+  font-weight: 500;
+  line-height: 1.1;
 }
 
 img.navbar-logo {
@@ -356,7 +541,7 @@ img.image-with-shadow {
 }
 
 .jumbo p {
-    font-size: 21px;
+  font-size: 21px;
 }
 
 .card-text h1,
@@ -364,27 +549,27 @@ img.image-with-shadow {
 .card-text h3,
 .card-text h4,
 .card-text h5 {
-    margin-top: 1.3em;
-    margin-bottom: 0.65em;
+  margin-top: 1.3em;
+  margin-bottom: 0.65em;
 }
 
 .card-header h5 {
-    padding-top: 5px;
+  padding-top: 5px;
 }
 
 .tab-content {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .bi-pencil-fill {
-    padding-bottom: 2px;
+  padding-bottom: 2px;
 }
 
 h1.maintitle {
-    font-size: 2.25em;
-    text-align: center;
-    margin-top: 1em;
-    margin-bottom: 1em;
+  font-size: 2.25em;
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 // .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
@@ -397,40 +582,41 @@ h1.maintitle {
 //----------------------------------------
 
 div.life-cycle {
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    font-size: 1.2em;
-    text-align: center;
-    margin-bottom: -0.065em;
-    border-radius: 0;
+  position: -webkit-sticky;
+  /* Safari */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  font-size: 1.2em;
+  text-align: center;
+  margin-bottom: -0.065em;
+  border-radius: 0;
 }
 
 .pre-alpha {
-    color: #a94442;
-    background: #f2dede;
+  color: #a94442;
+  background: #f2dede;
 }
 
 .alpha {
-    color: #8a6d3b;
-    background: #fcf8e3;
+  color: #8a6d3b;
+  background: #fcf8e3;
 }
 
 .beta {
-    color: #31708f;
-    background: #d9edf7;
+  color: #31708f;
+  background: #d9edf7;
 }
 
 .published {
-    color: #354711;
-    background: #effbd7;
+  color: #354711;
+  background: #effbd7;
 }
 
 // Remove border around spans of text within code blocks
 // that the highlighter (rouge) failed to recognize.
 pre.highlight span.err {
-    border: none;
+  border: none;
 }
 
 
@@ -439,20 +625,20 @@ pre.highlight span.err {
 //----------------------------------------
 
 kbd {
-    display: inline-block;
-    margin: 0 .1em;
-    padding: .1em .6em;
-    font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
-    font-size: 0.715em;
-    line-height: 1.4;
-    color: #242729;
-    text-shadow: 0 0.065em 0 #FFF;
-    background-color: #e1e3e5;
-    border: 0.065em solid #adb3b9;
-    border-radius: 0.195em;
-    box-shadow: 0 0.065em 0 rgba(12,13,14,0.2), 0 0 0 0.13em #FFF inset;
-    white-space: nowrap;
-    font-style: normal;
+  display: inline-block;
+  margin: 0 .1em;
+  padding: .1em .6em;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 0.715em;
+  line-height: 1.4;
+  color: #242729;
+  text-shadow: 0 0.065em 0 #FFF;
+  background-color: #e1e3e5;
+  border: 0.065em solid #adb3b9;
+  border-radius: 0.195em;
+  box-shadow: 0 0.065em 0 rgba(12, 13, 14, 0.2), 0 0 0 0.13em #FFF inset;
+  white-space: nowrap;
+  font-style: normal;
 }
 
 //------------------------------------------
@@ -460,25 +646,28 @@ kbd {
 // -----------------------------------------
 
 @media print {
-  blockquote.solution > * {
+  blockquote.solution>* {
     display: unset !important;
   }
 }
 
 summary {
-    display: list-item;
-    margin-bottom: 20px;
-    font-size: medium;
+  display: list-item;
+  margin-bottom: 20px;
+  font-size: medium;
 }
 
 //------------------------------------------
 // Reusable workshop series components
 //------------------------------------------
 
-$workshop-primary: {{ site.workshop_brand.primary | default: "#753BBD"}};
-$workshop-accent: {{ site.workshop_brand.accent | default: "#FFD100"}};
-$workshop-dark: {{ site.workshop_brand.dark | default: "#444444"}};
-$workshop-light: {{ site.workshop_brand.light | default: "#FFFFFF"}};
+$workshop-primary: {{ site.workshop_brand.primary | default: "#753BBD" }};
+$workshop-accent: {{ site.workshop_brand.accent | default: "#FFD100" }};
+$workshop-dark: {{ site.workshop_brand.dark | default: "#444444" }};
+$workshop-light: {{ site.workshop_brand.light | default: "#FFFFFF" }};
+
+$workshop-font-primary: "PT Sans", Arial, Helvetica, sans-serif !default;
+$workshop-font-secondary: "Arvo", Georgia, serif !default;
 
 //------------------------------------------
 // Flyer hero
@@ -554,7 +743,7 @@ $workshop-light: {{ site.workshop_brand.light | default: "#FFFFFF"}};
     color: $workshop-light;
   }
 
-    .workshop-fact {
+  .workshop-fact {
     min-width: 0;
   }
 
@@ -577,7 +766,7 @@ $workshop-light: {{ site.workshop_brand.light | default: "#FFFFFF"}};
     margin-bottom: 0.25rem;
   }
 
-  .workshop-fact > span:not(.workshop-fact-label) {
+  .workshop-fact>span:not(.workshop-fact-label) {
     color: rgba($workshop-light, 0.82);
     display: block;
     font-size: 0.85rem;
@@ -619,6 +808,10 @@ $workshop-light: {{ site.workshop_brand.light | default: "#FFFFFF"}};
     padding: 1.25rem;
   }
 
+  .workshop-signage-certificate strong {
+    font-family: $workshop-font-secondary;
+  }
+
   .workshop-certificate-label {
     color: $workshop-accent;
     display: block;
@@ -629,7 +822,7 @@ $workshop-light: {{ site.workshop_brand.light | default: "#FFFFFF"}};
     text-transformation: uppercase;
   }
 
-    .workshop-certificate h2 {
+  .workshop-certificate h2 {
     color: $workshop-light;
     font-size: 1.15rem;
     line-height: 1.3;
@@ -745,7 +938,7 @@ $workshop-light: {{ site.workshop_brand.light | default: "#FFFFFF"}};
     margin-top: 1.75rem;
     padding-top: 1rem;
   }
-  
+
   .series-hero-facts span {
     color: rgba($workshop-light, 0.9);
     font-size: 0.95rem;
@@ -1266,7 +1459,7 @@ $workshop-light: {{ site.workshop_brand.light | default: "#FFFFFF"}};
     margin-top: 1.5rem;
   }
 
-  > h2 + p {
+  >h2+p {
     background: rgba($workshop-accent, 0.12);
     border-left: 5px solid $workshop-accent;
     padding: 1rem 1.25rem;
@@ -1330,4 +1523,193 @@ $workshop-light: {{ site.workshop_brand.light | default: "#FFFFFF"}};
       padding-left: 1.4rem;
     }
   }
+}
+
+//------------------------------------------
+// Digital signage
+//------------------------------------------
+
+body.workshop-signage-page {
+  background: $workshop-primary;
+  margin: 0;
+  min-width: 1920px;
+  padding: 0;
+}
+
+.workshop-signage {
+  background: $workshop-primary;
+  border-bottom: 14px solid $workshop-accent;
+  box-sizing: border-box;
+  color: $workshop-light;
+  font-family: $workshop-font-primary;
+  height: 900px;
+  overflow: hidden;
+  width: 1920px;
+}
+
+.workshop-signage-content {
+  box-sizing: border-box;
+  display: grid;
+  gap: 120px;
+  grid-template-columns: 1130px 430px;
+  height: 100%;
+  padding: 50px 120px 70px;
+}
+
+.workshop-signage-main {
+  min-width: 0;
+}
+
+.workshop-signage-sidebar {
+  align-self: start;
+  background: $workshop-light;
+  width: 430px;
+}
+
+.workshop-signage-kicker {
+  color: $workshop-accent;
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  line-height: 1.2;
+  margin: 0 0 12px;
+  text-transform: uppercase;
+}
+
+.workshop-signage-main h1 {
+  color: $workshop-light;
+  font-size: 94px;
+  font-weight: 700;
+  letter-spacing: -2px;
+  line-height: 1.05;
+  margin: 0;
+}
+
+.workshop-signage-main h1 strong {
+  color: $workshop-accent;
+  display: block;
+  font-weight: 700;
+}
+
+.workshop-signage-topics {
+  color: $workshop-light;
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 22px 0 35px;
+}
+
+.workshop-signage-outcomes {
+  border-top: 3px solid rgba($workshop-light, 0.55);
+  margin-top: 35px;
+  padding: 25px 0 28px;
+}
+
+.workshop-signage-outcomes h2 {
+  color: $workshop-accent;
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 1.2;
+  margin: 0 0 16px;
+  text-transform: uppercase;
+}
+
+.workshop-signage-outcomes p {
+  color: $workshop-light;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 4px 0;
+}
+
+.workshop-signage-details {
+  margin-top: 24px;
+}
+
+.workshop-signage-details p {
+  color: $workshop-light;
+  font-size: 44px;
+  line-height: 1.25;
+  margin: 4px 0;
+}
+
+.workshop-signage-details strong {
+  font-weight: 700;
+}
+
+.workshop-signage-presenter {
+  color: $workshop-accent;
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  line-height: 1.2;
+  margin: 28px 0 0;
+  text-transform: uppercase;
+}
+
+.workshop-signage-certificate {
+  background: darken($workshop-primary, 10%);
+  border-left: 10px solid $workshop-accent;
+  box-sizing: border-box;
+  color: $workshop-light;
+  display: flex;
+  flex-direction: column;
+  height: 175px;
+  justify-content: center;
+  padding: 16px 25px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.workshop-signage-certificate span {
+  color: $workshop-light;
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+.workshop-signage-certificate strong {
+  color: $workshop-accent;
+  font-size: 40px;
+  line-height: 1.08;
+  margin-top: 10px;
+}
+
+.workshop-signage-qr {
+  box-sizing: border-box;
+  color: $workshop-dark;
+  min-height: 570px;
+  padding: 30px 25px 20px;
+  text-align: center;
+}
+
+.workshop-signage-qr img {
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  width: 270px;
+}
+
+.workshop-signage-qr a {
+  color: $workshop-dark;
+  display: block;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 18px auto 22px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.workshop-signage-qr span {
+  border-top: 3px solid $workshop-primary;
+  color: $workshop-dark;
+  display: block;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 auto;
+  padding-top: 18px;
 }
