@@ -25,7 +25,7 @@ what3words:           # what3words (https://what3words.com) address of the works
 
 ### Workshop Series Content ###
 workshop_url: "https://www.rcd.tntech.edu/2026-08-27-tntech/"
-workshop_display_url: "www.rcd.tntech.edu/2026-08-27-tntech"
+workshop_display_url: "www.rcd.tntech.edu/workshops"
 workshop_qr_code: "/assets/img/workshop/workshop-qr-code.png"
 
 workshop_outcomes:
@@ -75,6 +75,20 @@ workshop_requirements:
 
   default_registration_notice: >-
     Advance registration is requested. 
+
+
+# Digital signage
+signage_kicker: "Free Fall 2026 Workshop Series"
+signage_headline: "Build practical"
+signage_headline_emphasis: "computing foundations."
+
+signage_outcomes:
+  - "Use Unix and Git • Analyze data with Python or R"
+  - "Build reproducible computational workflows"
+
+signage_short_time: "6–9 PM"
+signage_experience: "Beginners welcome"
+signage_presenter: "Research Computing & Data"
 
 # DON'T CHANGE THIS
 layout: workshop

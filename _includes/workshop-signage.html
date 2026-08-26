@@ -1,0 +1,66 @@
+{% assign workshop = site.pages | where: "path", "index.md" | first %}
+
+<main class="workshop-signage">
+    <section class="workshop-signage-content">
+
+        <div class="workshop-signage-main">
+            <p class="workshop-signage-kicker">
+                {{ workshop.signage_kicker }}
+            </p>
+
+            <h1>
+                {{ workshop.signage_headline }}
+                <strong>{{ workshop.signage_headline_emphasis }}</strong>
+            </h1>
+
+            <div class="workshop-signage-outcomes">
+                <h2>Learn to:</h2>
+
+                {% for outcome in workshop.signage_outcomes %}
+                <p>{{ outcome }}</p>
+                {% endfor %}
+            </div>
+
+            <div class="workshop-signage-details">
+                <p>
+                    <strong>
+                        {{ workshop.humandate }} • {{ workshop.signage_short_time }}
+                    </strong>
+                </p>
+
+                <p>
+                    {{ workshop.building }} • {{ workshop.signage_experience }}
+                </p>
+            </div>
+
+            <p class="workshop-signage-presenter">
+                {{ workshop.signage_presenter }}
+            </p>
+        </div>
+        <aside class="workshop-signage-sidebar">
+
+            {% if workshop.certificate.enabled %}
+            <div class="workshop-signage-certificate">
+                <span>Earn a</span>
+                <strong>{{ workshop.certificate.title }}</strong>
+            </div>
+            {% endif %}
+
+            {% if workshop.workshop_qr_code %}
+            <div class="workshop-signage-qr">
+                <img src="{{ workshop.workshop_qr_code | relative_url }}"
+                    alt="QR code linking to the workshop schedule and registration page">
+
+                <a href="{{ workshop.workshop_url }}">
+                    Scan to register
+                </a>
+
+                <span>
+                    {{ workshop.workshop_display_url | replace: '/', '/<br>' }}
+                </span>
+            </div>
+            {% endif %}
+
+        </aside>
+    </section>
+</main>
