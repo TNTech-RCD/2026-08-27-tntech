@@ -25,7 +25,7 @@ what3words:           # what3words (https://what3words.com) address of the works
 
 ### Workshop Series Content ###
 workshop_url: "https://www.rcd.tntech.edu/2026-08-27-tntech/"
-workshop_display_url: "www.rcd.tntech.edu/2026-08-27-tntech"
+workshop_display_url: "www.rcd.tntech.edu/workshops"
 workshop_qr_code: "/assets/img/workshop/workshop-qr-code.png"
 
 workshop_outcomes:
