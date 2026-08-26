@@ -32,6 +32,7 @@ No previous command-line experience is required. Please complete the steps below
 3. Move the downloaded ZIP file to your Desktop.
 4. Extract the file. You should have a folder named `shell-lesson-data` on your Desktop.
 5. [Complete the pre-workshop survey](https://carpentries.typeform.com/to/wi32rS?slug=2026-08-27-tntech).
+6. Review [The Carpentries Code of Conduct](https://docs.carpentries.org/policies/coc/). All workshop participants are expected to follow this Code of Conduct.
 
 ### Operating-system instructions
 
