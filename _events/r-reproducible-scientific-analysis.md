@@ -6,6 +6,6 @@ sort_order: 8
 track: "programming"
 detail: "Parts 1 and 2 - attend moth meetings"
 lesson_key: "r-reproducible"
-registration_url:
+registration_url: "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=-Mr-ZsA9LE24uO_w3epG8Pd9xp4roEtFpGN_dLD6pNxUM0gwOUw3RkRGUDJINzFYTEI2WFJFMk1OUy4u"
 setup_ready: false
 ---
