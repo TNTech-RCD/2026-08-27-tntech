@@ -51,26 +51,36 @@ For this workshop, we recommend **Git Bash**, which is installed with Git for Wi
 If Git Bash is not already installed:
 
 1. Download [Git for Windows](https://gitforwindows.org/).
-2. Run the installer. Keep the default selections except for these two screens:
+2. Run the installer. Keep the default selections except for the following screens:
 
    - On **Choosing the default editor used by Git**, select **Use the Nano editor by default**.
 
-     <!-- ![Select Nano as the default Git editor in the Git for Windows installer.]({{ '/assets/img/workshop/nano_git_bash.png' | relative_url }}) -->
-
     <figure class="event-setup-screenshot">
-        <img
-            src="{{ '/assets/img/workshop/nano_git_bash.png' | relative_url }}"
+        <a href="{{ '/assets/img/workshop/nano_git_bash.png' | relative_url }}" target="_blank">
+            <img src="{{ '/assets/img/workshop/nano_git_bash.png' | relative_url }}"
             alt="Select Nano as the default Git editor in the Git for Windows installer.">
+        </a>
     </figure>
 
    - On **Adjusting the name of the initial branch in new repositories**, select **Override the default branch name for new repositories** and enter `main`.
-<!-- 
-     ![Set main as the default initial branch name in the Git for Windows installer.]({{ '/assets/img/workshop/main_branch_git_bash.png' | relative_url }}) -->
 
     <figure class="event-setup-screenshot">
-        <img
-            src="{{ '/assets/img/workshop/main_branch_git_bash.png' | relative_url }}"
+        <a href="{{ '/assets/img/workshop/main_branch_git_bash.png' | relative_url }}" target="_blank">
+            <img src="{{ '/assets/img/workshop/main_branch_git_bash.png' | relative_url }}"
             alt="Set main as the default initial branch name in the Git for Windows installer.">
+        </a>
+    </figure>
+
+    - On **Configuring the terminal emulator to use with Git Bash**, select
+    **Use Windows' default console window**.
+
+    This provides better compatibility with interactive programs such as Python that may be used in later workshops.
+
+    <figure class="event-setup-screenshot">
+        <a href="{{ '/assets/img/workshop/default_console_window.png' | relative_url }}" target="_blank">
+            <img src="{{ '/assets/img/workshop/default_console_window.png' | relative_url }}"
+            alt="Select Use Windows' default console window in the Git for Windows installer.">
+        </a>
     </figure>
 
 3. Continue through the remaining screens using the default selections, and then select **Install**.
