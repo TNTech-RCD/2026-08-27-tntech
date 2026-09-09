@@ -1,6 +1,10 @@
 <article class="series-event-row">
     <div class="series-event-date">
-        {{ include.event.date_label }}
+        {% if include.event.event_date %}
+            {{ include.event.event_date | date: "%b %-d" | upcase }}
+        {% else %}
+            {{ include.event.date_label }}
+        {% endif %}
     </div>
 
     <div class="series-event-description">
