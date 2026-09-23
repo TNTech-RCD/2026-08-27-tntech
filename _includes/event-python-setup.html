@@ -1,0 +1,10 @@
+<div class="event-setup" markdown="1">
+
+{% assign dates = include.event.event_dates %}
+
+**{% for workshop_date in dates %}{% unless forloop.first %}{% if forloop.last %} and {% else %}, {% endif %}{%
+endunless %}{{ workshop_date | date: "%A, %B %-d, %Y" }}{% endfor %}** <br>
+**{{ include.event.event_time }}{% if dates.size > 1 %}{% endif %}** <br>
+**{{ include.event.event_location }}**
+
+</div>
