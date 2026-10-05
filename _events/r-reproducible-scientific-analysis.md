@@ -1,6 +1,6 @@
 ---
 title: "R for Reproducible Scientific Analysis"
-date_label: "NOV 12 + NOV 19"
+date_label: "NOV 12 + DEC 03"
 sort_order: 8
 track: "programming"
 detail: "Parts 1 and 2 - attend both meetings"
