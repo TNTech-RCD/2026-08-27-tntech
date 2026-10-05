@@ -1,6 +1,9 @@
 ---
 title: "Version Control with Git"
-event_date: "2026-09-17"
+event_dates:
+  - "2026-09-17"
+event_time: "6:00-9:00 PM Central Time"
+event_location: "Bruner Hall, Room 126"
 sort_order: 4 
 track: "foundational"
 detail: "Offering 2 - repeat"

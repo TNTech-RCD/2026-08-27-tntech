@@ -1,0 +1,319 @@
+<div class="event-setup" markdown="1">
+
+## Prepare for Programming with Python
+
+{% assign dates = include.event.event_dates %}
+
+**{% for workshop_date in dates %}{% unless forloop.first %}{% if forloop.last %} and {% else %}, {% endif %}{%endunless %}{{ workshop_date | date: "%A, %B %-d, %Y" }}{% endfor %}** <br>
+**{{ include.event.event_time }}** <br>
+**{{ include.event.event_location }}**
+
+No previous Python experience is required. We will use the regular Python interpreter in a terminal. Please complete the setup before the first meeting and bring the same laptop to both meetings.
+
+### What to bring
+
+- A Windows, macOS, or Linux laptop
+- Your laptop's charging cable
+
+### Complete these steps before the workshop
+
+1. [Install Miniforge](#install-miniforge), unless you already have it.
+2. [Create the workshop environment](#create-the-workshop-environment). This installs Python, NumPy, and Matplotlib.
+3. [Download and extract the lesson files](#download-the-lesson-files).
+4. [Check your setup](#check-your-setup).
+5. [Complete the pre-workshop survey](https://carpentries.typeform.com/to/wi32rS?slug=2026-08-27-tntech). If you already completed it for this series, you do not need to complete it again.
+6. Review [The Carpentries Code of Conduct](https://docs.carpentries.org/policies/coc/).
+
+### Install Miniforge
+
+[Miniforge](https://conda-forge.org/download/) will let us install Python and the scientific packages used in the lesson together. If you already have Miniforge, skip to [Create the workshop environment](#create-the-workshop-environment). You do not need a separate Python installation. On Windows, if you already have Miniforge but have not used it in Git Bash, open **Miniforge Prompt**, run `conda init bash`, then close and reopen Git Bash before creating the workshop environment.
+
+<div class="card mb-2 python-install-card" id="python">
+    <div class="card-header d-flex align-items-center justify-content-between">
+        <!-- <h5>Miniforge Installation</h5> -->
+        <ul class="nav nav-pills os-tabs" role="tablist">
+            <li role="presentation" class="nav-item"><button class="nav-link active" data-os="windows"
+                    data-bs-target="#python-windows" aria-controls="Windows" role="tab"
+                    data-bs-toggle="tab">Windows</button></li>
+            <li role="presentation" class="nav-item"><button class="nav-link" data-os="macos"
+                    data-bs-target="#python-macos" aria-controls="MacOS" role="tab" data-bs-toggle="tab">MacOS</button>
+            </li>
+            <li role="presentation" class="nav-item"><button class="nav-link" data-os="linux"
+                    data-bs-target="#python-linux" aria-controls="Linux" role="tab" data-bs-toggle="tab">Linux</button>
+            </li>
+        </ul>
+    </div>
+    <div class="card-body">
+        <div>
+            <div class="tab-content">
+                <article role="tabpanel" class="tab-pane active" id="python-windows">
+                    <ol>
+                        <li>Open <a href="https://conda-forge.org/download/">https://conda-forge.org/download/</a> with
+                            your web
+                            browser.</li>
+                        <li>Download the Miniforge for Windows installer</li>
+                        <li>Double-click on the downloaded file (Something like,
+                            <code>Miniforge3-Windows-x86_64.exe</code>)
+                            <ul>
+                                <li>If Windows displays a “Windows protected your PC” message, select “More info,” then
+                                    “Run anyway.”
+                                </li>
+                            </ul>
+                        </li>
+                        <li>Follow through the installer using all of the defaults for installation <em>except</em> make
+                            sure to check
+                            <strong>Add Miniforge3 to my PATH environment variable</strong>.
+                        </li>
+                        <li>When installation finishes, open the Start menu and launch <strong>Miniforge
+                                Prompt</strong>.</li>
+                        <li>In Miniforge Prompt, type <code>conda init bash</code> and press <strong>Enter</strong>. Close any open Git Bash windows, then open a new Git Bash window.</li>
+                    </ol>
+                </article>
+                <article role="tabpanel" class="tab-pane" id="python-macos">
+                    <ol>
+                        <li>Open <a href="https://conda-forge.org/download/">https://conda-forge.org/download/</a> with
+                            your web
+                            browser.</li>
+                        <li>Download the appropriate Miniforge installer for macOS<br>
+                            <em>The following steps require using the shell. If you aren't comfortable doing the
+                                installation yourself
+                                stop here and request help at the workshop</em>.
+                        </li>
+                        <li>
+                            Open a terminal window and navigate to the directory where the executable is downloaded
+                            (e.g.,
+                            <code>cd ~/Downloads</code>).
+                        </li>
+                        <li>
+                            Type
+                            <pre>bash Miniforge3-</pre> and then press <kbd>Tab</kbd> to autocomplete the full file
+                            name.
+                            The name of file you just downloaded should appear.
+                            Press <kbd>Enter</kbd> (or <kbd>Return</kbd> depending on your keyboard).
+                        </li>
+                        <li>
+                            Follow the text-only prompts in the terminal. To move through the text, press
+                            <kbd>Spacebar</kbd>.
+                            <ul>
+                                <li>Type <code>yes</code> and press <kbd>Enter</kbd> (or <kbd>Return</kbd>) to approve
+                                    the license.</li>
+                                <li>Press <kbd>Enter</kbd> (or <kbd>Return</kbd>) to approve the default location for
+                                    the files.</li>
+                                <li>When the installer asks whether to initialize conda for your shell, type <code>yes</code> and press <kbd>Enter</kbd> (or <kbd>Return</kbd>) to prepend
+                                    Miniforge to your
+                                    <code>PATH</code> (this makes the Miniforge distribution the default Python).
+                                </li>
+                            </ul>
+                        </li>
+                        <li>Close the terminal window, then open a new one before continuing.</li>
+                    </ol>
+                </article>
+                <article role="tabpanel" class="tab-pane" id="python-linux">
+                    <ol>
+                        <li>Open <a href="https://conda-forge.org/download/">https://conda-forge.org/download/</a> with
+                            your web
+                            browser.</li>
+                        <li>Download the appropriate Miniforge installer for Linux<br>
+                            <em>The following steps require using the shell. If you aren't comfortable doing the
+                                installation yourself
+                                stop here and request help at the workshop</em>.
+                        </li>
+                        <li>
+                            Open a terminal window and navigate to the directory where the executable is downloaded
+                            (e.g.,
+                            <code>cd ~/Downloads</code>).
+                        </li>
+                        <li>
+                            Type
+                            <pre>bash Miniforge3-</pre> and then press <kbd>Tab</kbd> to autocomplete the full file
+                            name.
+                            The name of file you just downloaded should appear.
+                            Press <kbd>Enter</kbd> (or <kbd>Return</kbd> depending on your keyboard).
+                        </li>
+                        <li>
+                            Follow the text-only prompts in the terminal.
+                            To move through the text, press <kbd>Spacebar</kbd>.
+                            <ul>
+                                <li>Type <code>yes</code> and press <kbd>Enter</kbd> (or <kbd>Return</kbd>) to approve
+                                    the license.</li>
+                                <li>Press <kbd>Enter</kbd> (or <kbd>Return</kbd>) to approve the default location for
+                                    the files.</li>
+                                <li>When the installer asks whether to initialize conda for your shell, type <code>yes</code> and press <kbd>Enter</kbd> (or <kbd>Return</kbd>) to prepend
+                                    Miniforge to your
+                                    <code>PATH</code> (this makes the Miniforge distribution the default Python).
+                                </li>
+                            </ul>
+                        </li>
+                        <li>Close the terminal window, then open a new one before continuing.</li>
+                    </ol>
+                </article>
+            </div>
+        </div>
+    </div>
+</div>
+
+### Create the workshop environment
+
+<p>
+    A Python environment keeps the version of Python and the packages for this
+    workshop together. The file below tells Miniforge which packages to install,
+    including NumPy and Matplotlib. You create this environment only once; you
+    activate it each time you return to the workshop.
+</p>
+
+<div class="card mb-2 python-install-card" id="python-environment">
+    <div class="card-header d-flex align-items-center justify-content-between">
+        <!-- <h5>Set up the Python environment</h5> -->
+        <ul class="nav nav-pills os-tabs" role="tablist">
+            <li role="presentation" class="nav-item"><button class="nav-link active" data-os="windows"
+                    data-bs-target="#python-environment-windows" role="tab" data-bs-toggle="tab">Windows</button></li>
+            <li role="presentation" class="nav-item"><button class="nav-link" data-os="macos"
+                    data-bs-target="#python-environment-macos" role="tab" data-bs-toggle="tab">MacOS</button></li>
+            <li role="presentation" class="nav-item"><button class="nav-link" data-os="linux"
+                    data-bs-target="#python-environment-linux" role="tab" data-bs-toggle="tab">Linux</button></li>
+        </ul>
+    </div>
+
+    <div class="card-body">
+        <div class="tab-content">
+
+            <article role="tabpanel" class="tab-pane active" id="python-environment-windows">
+                <ol>
+                    <li>
+                        Right-click the
+                        <a href="{{ '/data/carpentries_environment.yml' | relative_url }}">workshop environment file</a>
+                        and select <strong>Save link as</strong>. Save it in Downloads with the name
+                        <code>carpentries_environment.yml</code>. Check that your browser has not
+                        added <code>.txt</code> to the filename.
+                    </li>
+                    <li>
+                        Open <strong>Git Bash</strong>. This is where you will type the following
+                        commands.
+                    </li>
+                    <li>
+                        Navigate to the folder where you saved the file. If it is in your usual
+                        Downloads folder, enter:
+                        <pre><code>cd ~/Downloads</code></pre>
+                        If your Downloads folder is redirected through OneDrive, navigate to
+                        its actual location instead, as you did in the earlier workshops.
+                    </li>
+                    <li>
+                        Check that Git Bash can see the file:
+                        <pre><code>ls carpentries_environment.yml</code></pre>
+                        You should see the filename printed. If you see “No such file or
+                        directory,” check the folder and filename before continuing.
+                    </li>
+                    <li>
+                        Create the workshop environment:
+                        <pre><code>conda env create -f carpentries_environment.yml</code></pre>
+                        Miniforge will read the file and install Python, NumPy, Matplotlib,
+                        and the other packages listed in it. This may take several minutes.
+                    </li>
+                    <li>
+                        When the command finishes and you can type again, activate your new environment by entering:
+                        <pre><code>conda activate carpentries</code></pre>
+                        You should see <code>(carpentries)</code> near the beginning of
+                        the Git Bash prompt.
+                    </li>
+                </ol>
+            </article>
+
+            <article role="tabpanel" class="tab-pane" id="python-environment-macos">
+                <ol>
+                    <li>
+                        Right-click the <a href="{{ '/data/carpentries_environment.yml' | relative_url }}">workshop
+                            environment file</a>
+                        and select <strong>Save Link As</strong> or
+                        <strong>Download Linked File As</strong>. Save it in Downloads as
+                        <code>carpentries_environment.yml</code>.
+                    </li>
+                    <li>
+                        Open <strong>Terminal</strong>. You can find it using Spotlight search
+                        or in Applications → Utilities. Click in the Terminal window to type commands.
+                    </li>
+                    <li>
+                        If you saved the file in Downloads, type this command and press
+                        <strong>Return</strong>:
+                        <pre><code>conda env create -f ~/Downloads/carpentries_environment.yml</code></pre>
+                        Miniforge will read the file and install the workshop packages.
+                        This may take several minutes.
+                    </li>
+                    <li>
+                        When the command finishes and you can type again, activate your new environment by entering:
+                        <pre><code>conda activate carpentries</code></pre>
+                        You should now see <code>(carpentries)</code> near the beginning of
+                        the prompt.
+                    </li>
+                </ol>
+            </article>
+
+            <article role="tabpanel" class="tab-pane" id="python-environment-linux">
+                <ol>
+                    <li>
+                        Right-click the <a href="{{ '/data/carpentries_environment.yml' | relative_url }}">workshop
+                            environment file</a>
+                        and select <strong>Save Link As</strong>. Save it in Downloads as
+                        <code>carpentries_environment.yml</code>.
+                    </li>
+                    <li>
+                        Open your computer's <strong>Terminal</strong> application. Click in
+                        the Terminal window to type commands.
+                    </li>
+                    <li>
+                        If you saved the file in Downloads, type this command and press
+                        <strong>Enter</strong>:
+                        <pre><code>conda env create -f ~/Downloads/carpentries_environment.yml</code></pre>
+                        Miniforge will read the file and install the workshop packages.
+                        This may take several minutes.
+                    </li>
+                    <li>
+                        When the command finishes and you can type again, activate your new environment by entering:
+                        <pre><code>conda activate carpentries</code></pre> 
+                        You should now see <code>(carpentries)</code> near the beginning of
+                        the prompt.
+                    </li>
+                </ol>
+            </article>
+
+        </div>
+    </div>
+</div>
+
+<p>
+  <strong>For the second workshop meeting:</strong> Open Git Bash on Windows,
+  or Terminal on macOS or Linux, and run
+  <code>conda activate carpentries</code>. You do not need to download the
+  environment file or create the environment again.
+</p>
+
+### Download the lesson files
+
+1. Download the [lesson data ZIP file](https://swcarpentry.github.io/python-novice-inflammation/data/python-novice-inflammation-data.zip) and the [lesson code ZIP file](https://swcarpentry.github.io/python-novice-inflammation/files/code/python-novice-inflammation-code.zip).
+2. Create a folder named `swc-python` on your Desktop.
+3. Move both downloaded ZIP files into `swc-python`.
+4. Extract both ZIP files. Some computers will create folders named `python-novice-inflammation-data` and `python-novice-inflammation-code`. If that happens, open each of those folders and move the `data` and `code` folders inside them up into `swc-python`.
+5. Check the result: opening `swc-python` should show `data` and `code` directly inside it. Open `data` and confirm that it contains `inflammation-01.csv`.
+
+If your Desktop is redirected through OneDrive, use the Desktop location you have used in the previous workshops.
+
+### Check your setup
+
+Open **Git Bash** on Windows or **Terminal** on macOS or Linux. Activate the workshop environment:
+
+```bash
+conda activate carpentries
+```
+
+You should see `(carpentries)` near the beginning of the prompt. Now check that Python can load the packages used in the lesson:
+
+```bash
+python -c "import numpy, matplotlib.pyplot; print('Python setup is ready')"
+```
+
+If you see `Python setup is ready` without an error, the software is ready.
+
+Finally, confirm that your Desktop `swc-python` folder contains `data` and `code` directly inside it, and that `data` contains `inflammation-01.csv`.
+
+During the workshop, we will start the interactive Python interpreter with `winpty python` in **Git Bash** or `python` in **Terminal**.
+
+</div>
